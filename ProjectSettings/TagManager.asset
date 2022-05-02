@@ -7,11 +7,12 @@ TagManager:
   - Floor
   - Wall
   - Background
+  - Ladder
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

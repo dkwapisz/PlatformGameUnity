@@ -6,7 +6,6 @@ public class CharacterController2D : MonoBehaviour {
     public float jumpForce = 300f;
     public float crouchPercentOfHeight = 0.5f;
     private float moveHorizontal;
-    private float moveVertical;
 
     private Rigidbody2D rb2D;
     private BoxCollider2D playerCollider2D;
@@ -45,11 +44,15 @@ public class CharacterController2D : MonoBehaviour {
         Crouch();
         StandUp();
     }
+
+    public static float Half(float value) {
+        return Mathf.Floor(value) + 0.5f;
+    }
     
     private void HandleCrouching() {
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             isCrouching = true;
-        } else if (!isPlayerCloseToCeiling()) {
+        } else if (!IsPlayerTouchingGround()) {
             isCrouching = false;
         }
     }
@@ -65,7 +68,6 @@ public class CharacterController2D : MonoBehaviour {
 
     private void HandleMovement() {
         moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
         currentVelocity = rb2D.velocity;
     }
     
@@ -96,20 +98,30 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private bool isPlayerCloseToCeiling() {
-        RaycastHit2D hitLeft = Physics2D.Raycast(
+    private bool IsPlayerTouchingGround() {
+        RaycastHit2D hitLeft1 = Physics2D.Raycast(
             transform.position - transform.right / 2, 
             Vector2.up,
             crouchColliderSize.magnitude);
         
-        RaycastHit2D hitRight = Physics2D.Raycast(
+        RaycastHit2D hitRight1 = Physics2D.Raycast(
             transform.position + transform.right / 2, 
             Vector2.up,
             crouchColliderSize.magnitude);
         
-        return hitLeft.collider || hitRight.collider;
+        RaycastHit2D hitLeft2 = Physics2D.Raycast(
+            transform.position - transform.right / 4, 
+            Vector2.up,
+            crouchColliderSize.magnitude);
+        
+        RaycastHit2D hitRight2 = Physics2D.Raycast(
+            transform.position + transform.right / 4, 
+            Vector2.up,
+            crouchColliderSize.magnitude);
+        
+        return hitLeft1.collider || hitRight1.collider || hitLeft2.collider || hitRight2.collider ;
     }
-    
+
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag.Equals("Floor")) {
             isJumping = false;
