@@ -52,7 +52,7 @@ public class CharacterController2D : MonoBehaviour {
     private void HandleCrouching() {
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             isCrouching = true;
-        } else if (!IsPlayerTouchingGround()) {
+        } else if (!IsPlayerUnderWall()) {
             isCrouching = false;
         }
     }
@@ -98,7 +98,7 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private bool IsPlayerTouchingGround() {
+    private bool IsPlayerUnderWall() {
         RaycastHit2D hitLeft1 = Physics2D.Raycast(
             transform.position - transform.right / 2, 
             Vector2.up,
