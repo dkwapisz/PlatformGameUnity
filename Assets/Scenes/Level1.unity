@@ -1031,6 +1031,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2516615875253386940, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516615875253386941, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
+      propertyPath: jumpForce
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516615875253386941, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
+      propertyPath: movementSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516615875253386943, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
 --- !u!1001 &242653823
@@ -1947,6 +1963,14 @@ PrefabInstance:
     - target: {fileID: 734341638951520577, guid: c1d38fffa5f839340ab9b0d03ab625b9, type: 3}
       propertyPath: m_Name
       value: BasicFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612248701490613320, guid: c1d38fffa5f839340ab9b0d03ab625b9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533597129334618943, guid: c1d38fffa5f839340ab9b0d03ab625b9, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9192499339774560515, guid: c1d38fffa5f839340ab9b0d03ab625b9, type: 3}
       propertyPath: m_RootOrder
@@ -4620,6 +4644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicWall
       objectReference: {fileID: 0}
+    - target: {fileID: 6533597129334618943, guid: 1568fbadfe7eb0145baafc86f5fdea5e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9192499339774560515, guid: 1568fbadfe7eb0145baafc86f5fdea5e, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -5918,7 +5946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192499339774560515, guid: 48cc53ed65ab2794d9c233fc04727595, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 9192499339774560515, guid: 48cc53ed65ab2794d9c233fc04727595, type: 3}
       propertyPath: m_LocalScale.y

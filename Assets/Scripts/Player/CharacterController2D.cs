@@ -9,6 +9,7 @@ public class CharacterController2D : MonoBehaviour {
 
     private Rigidbody2D rb2D;
     private BoxCollider2D playerCollider2D;
+    private PhysicsMaterial2D playerMaterial;
     private Vector2 currentVelocity;
 
     private Vector2 standColliderSize;
@@ -23,6 +24,9 @@ public class CharacterController2D : MonoBehaviour {
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+        playerMaterial = new PhysicsMaterial2D();
+        playerMaterial.friction = 0.4f;
+        playerCollider2D.sharedMaterial = playerMaterial;
 
         standColliderSize = playerCollider2D.size;
         standColliderOffset = playerCollider2D.offset;
@@ -30,12 +34,12 @@ public class CharacterController2D : MonoBehaviour {
         crouchColliderSize = new Vector2(standColliderSize.x, standColliderSize.y * crouchPercentOfHeight);
         crouchColliderOffset = new Vector2(standColliderOffset.x, -(standColliderSize.y * crouchPercentOfHeight / 2));
     }
-
-
+    
     void Update() {
         HandleMovement();
         HandleJumping();
         HandleCrouching();
+        ChangeFrictionByVelocity();
     }
 
     private void FixedUpdate() {
@@ -45,8 +49,15 @@ public class CharacterController2D : MonoBehaviour {
         StandUp();
     }
 
-    public static float Half(float value) {
-        return Mathf.Floor(value) + 0.5f;
+    private void ChangeFrictionByVelocity() {
+        if (rb2D.velocity.y != 0 || rb2D.velocity.x == 0) {
+            playerCollider2D.sharedMaterial.friction = 0f;
+        } else {
+            playerCollider2D.sharedMaterial.friction = 0.4f;
+        }
+        
+        playerCollider2D.enabled = false;
+        playerCollider2D.enabled = true;
     }
     
     private void HandleCrouching() {
