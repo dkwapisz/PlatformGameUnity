@@ -133,8 +133,16 @@ public class CharacterController2D : MonoBehaviour {
         return hitLeft1.collider || hitRight1.collider || hitLeft2.collider || hitRight2.collider ;
     }
 
+    private bool IsPlayerTouchingGround() {
+        RaycastHit2D hitDown = Physics2D.Raycast(transform.position,
+            Vector2.down,
+            standColliderSize.magnitude);
+
+        return hitDown.collider;
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag.Equals("Floor")) {
+        if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
             isJumping = false;
         }
     }
