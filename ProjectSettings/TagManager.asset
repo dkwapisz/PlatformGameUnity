@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Background
   - Ladder
+  - Basketball
   layers:
   - Default
   - TransparentFX
