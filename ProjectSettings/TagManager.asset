@@ -8,6 +8,9 @@ TagManager:
   - Wall
   - Background
   - Ladder
+  - Basketball
+  - Football
+  - FootballGate
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - FootballGate
   - 
   - 
   - 
