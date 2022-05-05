@@ -11,6 +11,10 @@ TagManager:
   - Basketball
   - Football
   - FootballGate
+  - Beer
+  - Mark
+  - PowerUp
+  - Enemy
   layers:
   - Default
   - TransparentFX
