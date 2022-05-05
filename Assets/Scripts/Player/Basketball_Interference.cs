@@ -8,7 +8,7 @@ public class Basketball_Interference : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Basketball")
+        if(col.CompareTag("Basketball"))
         {
             Debug.Log("Player touched Basketball");
         }

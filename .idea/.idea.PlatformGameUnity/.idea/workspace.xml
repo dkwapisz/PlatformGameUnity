@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="">
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Basketball prefab added - good behaviour, Player detects contact">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Basketball_Interference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Basketball_Interference.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +66,16 @@
       <workItem from="1651522197896" duration="676000" />
       <workItem from="1651584760163" duration="2134000" />
       <workItem from="1651747291043" duration="203000" />
-      <workItem from="1651747543277" duration="1538000" />
+      <workItem from="1651747543277" duration="3521000" />
     </task>
+    <task id="LOCAL-00001" summary="Basketball prefab added - good behaviour, Player detects contact">
+      <created>1651753349944</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651753349944</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,5 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Basketball prefab added - good behaviour, Player detects contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basketball prefab added - good behaviour, Player detects contact" />
   </component>
 </project>
