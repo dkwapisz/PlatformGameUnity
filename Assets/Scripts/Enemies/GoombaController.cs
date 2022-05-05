@@ -1,20 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GoombaController : MonoBehaviour
-{
+public class GoombaController : MonoBehaviour {
 
     [SerializeField] int bounceForce = 8;
     private GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
+    
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
 
         if (collision.gameObject.tag == "Player")
         {
@@ -49,10 +44,5 @@ public class GoombaController : MonoBehaviour
     void bouncePlayer(){
         player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounceForce), ForceMode2D.Impulse);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 }
