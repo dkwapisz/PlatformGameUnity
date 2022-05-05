@@ -5853,6 +5853,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 230566480}
     m_Modifications:
+    - target: {fileID: 8963212226261038416, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
+      propertyPath: bounceForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8963212226261038428, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
       propertyPath: m_Color.b
       value: 0
