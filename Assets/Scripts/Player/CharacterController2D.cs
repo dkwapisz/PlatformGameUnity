@@ -3,6 +3,7 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour {
     
     public float movementSpeed = 3f;
+    public float runningSpeedFactor = 2f;
     public float jumpForce = 300f;
     public float crouchPercentOfHeight = 0.5f;
     private float moveHorizontal;
@@ -20,6 +21,7 @@ public class CharacterController2D : MonoBehaviour {
     private bool isJumping;
     private bool alreadyJumping;
     private bool isCrouching;
+    private bool isRunning;
 
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
@@ -39,6 +41,7 @@ public class CharacterController2D : MonoBehaviour {
         HandleMovement();
         HandleJumping();
         HandleCrouching();
+        HandleRunning();
         ChangeFrictionByVelocity();
     }
 
@@ -49,6 +52,15 @@ public class CharacterController2D : MonoBehaviour {
         StandUp();
     }
 
+    private void HandleRunning() {
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            isRunning = true;
+        }
+        else {
+            isRunning = false;
+        }
+    }
+    
     private void ChangeFrictionByVelocity() {
         if (rb2D.velocity.y != 0 || rb2D.velocity.x == 0) {
             playerCollider2D.sharedMaterial.friction = 0f;
@@ -56,6 +68,7 @@ public class CharacterController2D : MonoBehaviour {
             playerCollider2D.sharedMaterial.friction = 0.4f;
         }
         
+        // Its needed to change friction dynamically 
         playerCollider2D.enabled = false;
         playerCollider2D.enabled = true;
     }
@@ -84,7 +97,11 @@ public class CharacterController2D : MonoBehaviour {
     
     private void MoveHorizontal() {
         if (moveHorizontal != 0) {
-            rb2D.velocity = new Vector2(moveHorizontal * movementSpeed, currentVelocity.y);
+            if (!isRunning) {
+                rb2D.velocity = new Vector2(moveHorizontal * movementSpeed, currentVelocity.y);
+            } else {
+                rb2D.velocity = new Vector2(moveHorizontal * movementSpeed * runningSpeedFactor, currentVelocity.y);
+            }
         }
     }
 

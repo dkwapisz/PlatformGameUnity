@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -9,20 +10,29 @@ public class CharacterBehaviour : MonoBehaviour {
     public int marks = 0;
     public float enemyHitCooldown = 2f;
     private float nextHitTimer;
+    private Rigidbody2D rb2D;
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void Start() {
+        rb2D = GetComponent<Rigidbody2D>();
+    }
 
-        if (collision.gameObject.tag.Equals("Beer")) {
+    private void OnTriggerEnter2D(Collider2D collider) {
+
+        if (collider.gameObject.tag.Equals("Beer")) {
             health += 1;
-            Destroy(collision.gameObject);
+            Destroy(collider.gameObject);
             
             Debug.Log("Beer collected. Health: " + health);
-        } else if (collision.gameObject.tag.Equals("Mark")) {
+        } else if (collider.gameObject.tag.Equals("Mark")) {
             marks += 1;
-            Destroy(collision.gameObject);
+            Destroy(collider.gameObject);
             
             Debug.Log("Mark collected. Marks: " + marks);
-        } else if (collision.gameObject.tag.Equals("Enemy")) {
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collider) {
+        if (collider.gameObject.tag.Equals("Enemy")) {
             if (nextHitTimer <= 0) {
                 health -= 1;
                 nextHitTimer = enemyHitCooldown;
@@ -30,8 +40,8 @@ public class CharacterBehaviour : MonoBehaviour {
             else {
                 nextHitTimer -= Time.deltaTime;
             }
+            
             Debug.Log("Health: " + health);
         }
-        
     }
 }
