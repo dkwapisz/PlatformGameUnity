@@ -137,8 +137,28 @@ public class CharacterController2D : MonoBehaviour {
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position,
             Vector2.down,
             standColliderSize.magnitude);
+        
+        RaycastHit2D hitDownLeftLeft = Physics2D.Raycast(transform.position - transform.right / 2,
+            Vector2.down,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitDownLeft = Physics2D.Raycast(transform.position - transform.right / 4,
+            Vector2.down,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitDownRightRight = Physics2D.Raycast(transform.position + transform.right / 2,
+            Vector2.down,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitDownRight = Physics2D.Raycast(transform.position + transform.right / 4,
+            Vector2.down,
+            standColliderSize.magnitude);
 
-        return hitDown.collider;
+        return hitDown.collider || 
+               hitDownLeft || 
+               hitDownRight || 
+               hitDownLeftLeft || 
+               hitDownRightRight;
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
