@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour {
+public class CharacterBehaviour : MonoBehaviour {
 
     public int health = 5;
     public int marks = 0;
+    public float enemyHitCooldown = 2f;
+    private float nextHitTimer;
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
@@ -20,8 +23,13 @@ public class CharacterStats : MonoBehaviour {
             
             Debug.Log("Mark collected. Marks: " + marks);
         } else if (collision.gameObject.tag.Equals("Enemy")) {
-            health -= 1;
-            // TODO - cooldown 1-2s after getting hit from enemy
+            if (nextHitTimer <= 0) {
+                health -= 1;
+                nextHitTimer = enemyHitCooldown;
+            }
+            else {
+                nextHitTimer -= Time.deltaTime;
+            }
             Debug.Log("Health: " + health);
         }
         
