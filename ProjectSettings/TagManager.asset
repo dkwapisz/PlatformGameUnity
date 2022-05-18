@@ -15,6 +15,7 @@ TagManager:
   - Mark
   - PowerUp
   - Enemy
+  - Trampoline
   layers:
   - Default
   - TransparentFX
