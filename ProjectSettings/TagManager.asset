@@ -24,7 +24,7 @@ TagManager:
   - Water
   - UI
   - FootballGate
-  - 
+  - Football
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Football
+    uniqueID: 1328810475
     locked: 0

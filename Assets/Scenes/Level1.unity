@@ -976,11 +976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2516615875253386937, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.770782
+      value: 16.76
       objectReference: {fileID: 0}
     - target: {fileID: 2516615875253386937, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5810032
+      value: -48.61
       objectReference: {fileID: 0}
     - target: {fileID: 2516615875253386937, guid: 92bde598e8d1d614a9e05d8c391e844e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2957,8 +2957,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1489623064901614768}
   - {fileID: 3799562386622655787}
+  - {fileID: 1489623064901614768}
   m_Father: {fileID: 901229506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7160,7 +7160,7 @@ GameObject:
   - component: {fileID: 1674600997598253935}
   - component: {fileID: 1674600997598253934}
   - component: {fileID: 1674600997598253937}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Football
   m_TagString: Football
   m_Icon: {fileID: 0}
@@ -7175,12 +7175,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825351408036888350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.97, y: -4.94, z: 0}
+  m_LocalPosition: {x: 35.02, y: -4.94, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 884860508}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1674600997598253933
 SpriteRenderer:
@@ -7220,8 +7220,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1328810475
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b50596cb06c2c94fa18e5a079a1da91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7299,6 +7299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227fa34a34c67e34985f7419cfce8bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footBallGate: {fileID: 7955348229234700255}
 --- !u!4 &2661118619966663673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1212687986023873316, guid: 197d2b4f6246b3340a26a5c91ded36f0, type: 3}
@@ -7572,12 +7573,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7955348229234700255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.15, y: -4.07, z: 0}
+  m_LocalPosition: {x: 40.94, y: -4.07, z: 0}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 884860508}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6857147090126353555
 SpriteRenderer:
@@ -7644,6 +7645,7 @@ GameObject:
   - component: {fileID: 7955348229234700257}
   - component: {fileID: 7955348229234700256}
   - component: {fileID: 7955348229234700258}
+  - component: {fileID: 7955348229234700259}
   m_Layer: 6
   m_Name: FootballGate
   m_TagString: FootballGate
@@ -7667,8 +7669,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.3872962, y: 1.501665}
-  - {x: 1.549851, y: -1.4453539}
+  - {x: 0.7129226, y: 1.3659858}
+  - {x: 1.7343717, y: -1.4182186}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -7690,7 +7692,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.37, y: 2.99}
+    oldSize: {x: 14.16, y: 6.72}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7711,3 +7713,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84b6e574b5e30c449914bb78aa1c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footBallGate: {fileID: 7955348229234700255}
+--- !u!70 &7955348229234700259
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955348229234700255}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.3183537, y: -0.023185411}
+  m_Size: {x: 0.2665863, y: 2.877232}
+  m_Direction: 0
