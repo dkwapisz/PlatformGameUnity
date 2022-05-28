@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class FootballBehaviour : MonoBehaviour
 {
-   
+    
+    [SerializeField] GameObject footBallGate;
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("FootballGate"))
         {
-            Debug.Log("GOAL!");
+            if (col is BoxCollider2D)
+            {
+                 Debug.Log("GOAL");
+                 footBallGate.GetComponent<CapsuleCollider2D>().enabled = true; //prevents ball from escaping footballgate
+            }
         }
     }
 }

@@ -16,6 +16,9 @@ TagManager:
   - PowerUp
   - Enemy
   - Trampoline
+  - IntegralCage
+  - Integral
+  - IntergralS2
   layers:
   - Default
   - TransparentFX
@@ -24,9 +27,9 @@ TagManager:
   - Water
   - UI
   - FootballGate
-  - 
-  - 
-  - 
+  - Football
+  - IntegralCage
+  - Integral
   - 
   - 
   - 
@@ -52,4 +55,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Football
+    uniqueID: 1328810475
     locked: 0
