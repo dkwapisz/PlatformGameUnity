@@ -16,6 +16,9 @@ TagManager:
   - PowerUp
   - Enemy
   - Trampoline
+  - IntegralCage
+  - Integral
+  - IntergralS2
   layers:
   - Default
   - TransparentFX
@@ -25,8 +28,8 @@ TagManager:
   - UI
   - FootballGate
   - Football
-  - 
-  - 
+  - IntegralCage
+  - Integral
   - 
   - 
   - 

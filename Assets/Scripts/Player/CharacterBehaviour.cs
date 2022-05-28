@@ -29,6 +29,10 @@ public class CharacterBehaviour : MonoBehaviour {
             
             Debug.Log("Mark collected. Marks: " + marks);
         }
+        if (collider.CompareTag("IntegralCage"))
+        {
+            Physics2D.IgnoreLayerCollision(3,8, true);//3 Player Layer //8 IntegralCageLayer
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collider) {
