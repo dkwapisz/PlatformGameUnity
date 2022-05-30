@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuFunctionalities : MonoBehaviour
 {
-    public void PlayGame() {
+    public void PlayLevel1() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+    }
+
+    public void PlayLevel2() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
+    }
+
+    public void PlayLevel3() { //IN PROGRESS
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level3");
     }
     
     public void QuitGame() {
