@@ -22,6 +22,8 @@ public class CharacterController2D : MonoBehaviour {
     private bool alreadyJumping;
     private bool isCrouching;
     private bool isRunning;
+    
+    public Animation anim;
 
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
@@ -35,6 +37,8 @@ public class CharacterController2D : MonoBehaviour {
         
         crouchColliderSize = new Vector2(standColliderSize.x, standColliderSize.y * crouchPercentOfHeight);
         crouchColliderOffset = new Vector2(standColliderOffset.x, -(standColliderSize.y * crouchPercentOfHeight / 2));
+        
+        anim = GetComponent<Animation>();
     }
     
     void Update() {
