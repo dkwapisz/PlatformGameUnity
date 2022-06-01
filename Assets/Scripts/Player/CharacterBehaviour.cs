@@ -8,7 +8,7 @@ public class CharacterBehaviour : MonoBehaviour {
 
     public int health = 5;
     public int marks = 0;
-    public float enemyHitCooldown = 2f;
+    public float enemyHitCooldown = 1.5f;
     private float nextHitTimer;
     private Rigidbody2D rb2D;
 
@@ -36,7 +36,7 @@ public class CharacterBehaviour : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collider) {
-        if (collider.gameObject.tag.Equals("Enemy")) {
+        if (collider.gameObject.tag.Equals("Enemy") || collider.gameObject.tag.Equals("Spikes")) {
             if (nextHitTimer <= 0) {
                 health -= 1;
                 nextHitTimer = enemyHitCooldown;
