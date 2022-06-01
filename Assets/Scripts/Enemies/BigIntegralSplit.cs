@@ -16,7 +16,7 @@ public class BigIntegralSplit : MonoBehaviour
     void Update()
     {
         spawnPosition = transform.position;
-        Debug.Log(spawnPosition);
+        // Debug.Log(spawnPosition);
         if (Input.GetKey(KeyCode.P))
         {
             OnSpawnPrefab();

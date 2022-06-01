@@ -4,7 +4,12 @@ public class GoombaController : MonoBehaviour {
 
     [SerializeField] int bounceForce = 8;
     private GameObject player;
-    
+    private Vector2 topDirection = Vector2.down;
+    private Vector2 bottomDirection = Vector2.up;
+    private Vector2 leftDirection = Vector2.right;
+    private Vector2 rightDirection = Vector2.left;
+    private float contactThreshold = 30;
+
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -13,36 +18,53 @@ public class GoombaController : MonoBehaviour {
 
         if (collision.gameObject.tag == "Player")
         {
-            ContactPoint2D[] allCollisionPoints = new ContactPoint2D[collision.contactCount];
-            collision.GetContacts(allCollisionPoints);
-
-            checkIfCollisionFromUp(allCollisionPoints);
+            checkCollisionDirection(collision.contacts);
         }
     }
 
-    void checkIfCollisionFromUp(ContactPoint2D[] allCollisionPoints){
-        int counter = 0;
-        float y_position;
-
-        y_position = allCollisionPoints[0].point.y;
-
-        foreach (var i in allCollisionPoints){
-
-            if (i.point.y == y_position) counter++;
-        }
-
-        if (counter >= allCollisionPoints.Length){
-            bouncePlayer();
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Kolizja od boku");
+    void checkCollisionDirection(ContactPoint2D[] allCollisionPoints){
+        
+        for (int i = 0; i < allCollisionPoints.Length; i++) {
+            if (Vector2.Angle(allCollisionPoints[i].normal, topDirection) <= contactThreshold) {
+                topCollision();
+                Debug.Log("GOOMBA: Collision on the top");
+            } else if (Vector2.Angle(allCollisionPoints[i].normal, bottomDirection) <= contactThreshold) {
+                bottomCollision();
+                Debug.Log("GOOMBA: Collision on the bottom");
+            } else if (Vector2.Angle(allCollisionPoints[i].normal, leftDirection) <= contactThreshold) {
+                leftCollision();
+                Debug.Log("GOOMBA: Collision on the left");
+            } else if (Vector2.Angle(allCollisionPoints[i].normal, rightDirection) <= contactThreshold) {
+                rightCollision();
+                Debug.Log("GOOMBA: Collision on the right");
+            }
         }
     }
 
-    void bouncePlayer(){
-        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounceForce), ForceMode2D.Impulse);
+
+    void leftCollision() {
+        bouncePlayer(new Vector2(-bounceForce/2, 0));
+    }
+
+    void rightCollision()
+    {
+        bouncePlayer(new Vector2(bounceForce/2, 0));
+    }
+
+    void topCollision()
+    {
+        bouncePlayer(new Vector2(0, bounceForce));
+        Destroy(gameObject);
+    }
+
+    void bottomCollision()
+    {
+        bouncePlayer(new Vector2(0, -bounceForce));
+        Destroy(gameObject);
+    }
+
+    void bouncePlayer(Vector2 force) {
+        player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
     
 }
