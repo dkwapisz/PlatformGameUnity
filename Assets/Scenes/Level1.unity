@@ -5763,7 +5763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8963212226261038416, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
       propertyPath: bounceForce
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8963212226261038428, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
       propertyPath: m_Color.b
@@ -5824,6 +5824,14 @@ PrefabInstance:
     - target: {fileID: 8963212226261038430, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
       propertyPath: m_Name
       value: Goomba
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963212226261038431, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963212226261038431, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
+      propertyPath: m_Constraints
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8963212226261038431, guid: 70bade32201feb0629bf1e892cf3ed02, type: 3}
       propertyPath: m_CollisionDetection

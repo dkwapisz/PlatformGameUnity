@@ -1,8 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
-public class GoombaController : MonoBehaviour {
+public class GoombaController : MonoBehaviour
+{
 
     [SerializeField] int bounceForce = 8;
+    [SerializeField] int cooldownSeconds = 2;
+    private bool damageCooldownActive = false;
     private GameObject player;
     private Vector2 topDirection = Vector2.down;
     private Vector2 bottomDirection = Vector2.up;
@@ -10,11 +14,13 @@ public class GoombaController : MonoBehaviour {
     private Vector2 rightDirection = Vector2.left;
     private float contactThreshold = 30;
 
-    void Start() {
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
 
         if (collision.gameObject.tag == "Player")
         {
@@ -22,19 +28,28 @@ public class GoombaController : MonoBehaviour {
         }
     }
 
-    void checkCollisionDirection(ContactPoint2D[] allCollisionPoints){
-        
-        for (int i = 0; i < allCollisionPoints.Length; i++) {
-            if (Vector2.Angle(allCollisionPoints[i].normal, topDirection) <= contactThreshold) {
+    void checkCollisionDirection(ContactPoint2D[] allCollisionPoints)
+    {
+
+        for (int i = 0; i < allCollisionPoints.Length; i++)
+        {
+            if (Vector2.Angle(allCollisionPoints[i].normal, topDirection) <= contactThreshold)
+            {
                 topCollision();
                 Debug.Log("GOOMBA: Collision on the top");
-            } else if (Vector2.Angle(allCollisionPoints[i].normal, bottomDirection) <= contactThreshold) {
+            }
+            else if (Vector2.Angle(allCollisionPoints[i].normal, bottomDirection) <= contactThreshold)
+            {
                 bottomCollision();
                 Debug.Log("GOOMBA: Collision on the bottom");
-            } else if (Vector2.Angle(allCollisionPoints[i].normal, leftDirection) <= contactThreshold) {
+            }
+            else if (Vector2.Angle(allCollisionPoints[i].normal, leftDirection) <= contactThreshold)
+            {
                 leftCollision();
                 Debug.Log("GOOMBA: Collision on the left");
-            } else if (Vector2.Angle(allCollisionPoints[i].normal, rightDirection) <= contactThreshold) {
+            }
+            else if (Vector2.Angle(allCollisionPoints[i].normal, rightDirection) <= contactThreshold)
+            {
                 rightCollision();
                 Debug.Log("GOOMBA: Collision on the right");
             }
@@ -42,13 +57,16 @@ public class GoombaController : MonoBehaviour {
     }
 
 
-    void leftCollision() {
-        bouncePlayer(new Vector2(-bounceForce/2, 0));
+    void leftCollision()
+    {
+        hurtPlayer();
+        bouncePlayer(new Vector2(-bounceForce / 2, 0));
     }
 
     void rightCollision()
     {
-        bouncePlayer(new Vector2(bounceForce/2, 0));
+        hurtPlayer();
+        bouncePlayer(new Vector2(bounceForce / 2, 0));
     }
 
     void topCollision()
@@ -63,8 +81,25 @@ public class GoombaController : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    void bouncePlayer(Vector2 force) {
-        player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+    void hurtPlayer() {
+
+        if (!damageCooldownActive) {
+            player.GetComponent<CharacterBehaviour>().health -= 1;
+            StartCoroutine(activateCooldown());
+        }
     }
-    
+
+    void bouncePlayer(Vector2 force)
+    {
+        player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+        Debug.Log("Player: Health decreased. Health: " + player.GetComponent<CharacterBehaviour>().health);
+    }
+
+    IEnumerator activateCooldown(){
+        damageCooldownActive = true;
+        yield return new WaitForSeconds(cooldownSeconds);
+        damageCooldownActive = false;
+    }
+
+
 }

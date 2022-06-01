@@ -36,7 +36,7 @@ public class CharacterBehaviour : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collider) {
-        if (collider.gameObject.tag.Equals("Enemy") || collider.gameObject.tag.Equals("Spikes")) {
+        if (collider.gameObject.tag.Equals("Spikes")) {
             if (nextHitTimer <= 0) {
                 health -= 1;
                 nextHitTimer = enemyHitCooldown;

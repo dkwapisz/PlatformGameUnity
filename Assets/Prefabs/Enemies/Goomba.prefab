@@ -147,7 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767133222df5e1947a11add170a49d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 5
+  range: 5
+  speed: 4
+  smoothTime: 0.5
 --- !u!114 &8963212226261038416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +163,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 16
+  cooldownSeconds: 2

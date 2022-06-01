@@ -5,29 +5,55 @@ using UnityEngine;
 public class VerticalAmpMovement : MonoBehaviour
 {
 
-    [SerializeField] float amplitude = 5f;
-    private Vector2 startPosition;
-    private float shift;
+    [SerializeField] float range = 5f;
+    [SerializeField] float speed = 0.1f;
+    [SerializeField] float smoothTime = 0.5f;
+    float offset = 0.01f;
+    Vector2 leftLimit, righLimit, velocity;
+    Vector2 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
+        leftLimit = new Vector2(transform.position.x - range, transform.position.y);
+        righLimit = new Vector2(transform.position.x + range, transform.position.y);
+        targetPosition = righLimit;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Floor")
         {
-            Debug.Log("GOOMBA: Move direction changed");
-            amplitude = -amplitude;
+            turnBack();
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        shift = amplitude * Mathf.Sin(Time.time / 2);
-        transform.position = startPosition + new Vector2(shift, 0.0f);
+        transform.position = Vector2.SmoothDamp(
+            transform.position,
+            targetPosition,
+            ref velocity,
+            smoothTime,
+            speed
+        );
+
+        if (transform.position.x >= righLimit.x - offset ||
+            transform.position.x <= leftLimit.x + offset) {
+
+            turnBack();
+        }
+    }
+
+    void turnBack() {
+        if (targetPosition == righLimit) {
+            targetPosition = leftLimit;
+
+        } else {
+            targetPosition = righLimit;
+            
+        }
+        Debug.Log("GOOMBA: Turned back");
     }
 }
