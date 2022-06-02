@@ -12,6 +12,8 @@ public class CharacterController2D : MonoBehaviour {
     private BoxCollider2D playerCollider2D;
     private PhysicsMaterial2D playerMaterial;
     private Vector2 currentVelocity;
+    private GameObject playerSprite;
+    private Animator animator;
 
     private Vector2 standColliderSize;
     private Vector2 standColliderOffset;
@@ -27,6 +29,8 @@ public class CharacterController2D : MonoBehaviour {
 
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
+        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
+        animator = playerSprite.GetComponent<Animator>();
         playerCollider2D = GetComponent<BoxCollider2D>();
         playerMaterial = new PhysicsMaterial2D();
         playerMaterial.friction = 0.4f;
@@ -37,8 +41,6 @@ public class CharacterController2D : MonoBehaviour {
         
         crouchColliderSize = new Vector2(standColliderSize.x, standColliderSize.y * crouchPercentOfHeight);
         crouchColliderOffset = new Vector2(standColliderOffset.x, -(standColliderSize.y * crouchPercentOfHeight / 2));
-        
-        anim = GetComponent<Animation>();
     }
     
     void Update() {
@@ -101,11 +103,15 @@ public class CharacterController2D : MonoBehaviour {
     
     private void MoveHorizontal() {
         if (moveHorizontal != 0) {
+            animator.SetBool("IsRunning", true);
             if (!isRunning) {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed, currentVelocity.y);
             } else {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed * runningSpeedFactor, currentVelocity.y);
             }
+        }
+        else {
+            animator.SetBool("IsRunning", false);
         }
     }
 
@@ -113,6 +119,7 @@ public class CharacterController2D : MonoBehaviour {
         if (isJumping && !alreadyJumping) {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
             alreadyJumping = true;
+            animator.SetTrigger("Jump");
         }
     }
 
