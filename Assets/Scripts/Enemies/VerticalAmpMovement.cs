@@ -9,15 +9,20 @@ public class VerticalAmpMovement : MonoBehaviour
     [SerializeField] float speed = 0.1f;
     [SerializeField] float smoothTime = 0.5f;
     float offset = 0.01f;
+    private SpriteRenderer spriteRenderer;
+    private GameObject goombaSprite;
     Vector2 leftLimit, righLimit, velocity;
     Vector2 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        goombaSprite = GameObject.FindGameObjectWithTag("GoombaSprite");
+        spriteRenderer = goombaSprite.GetComponent<SpriteRenderer>();
         leftLimit = new Vector2(transform.position.x - range, transform.position.y);
         righLimit = new Vector2(transform.position.x + range, transform.position.y);
         targetPosition = righLimit;
+        spriteRenderer.flipX = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +36,7 @@ public class VerticalAmpMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         transform.position = Vector2.SmoothDamp(
             transform.position,
             targetPosition,
@@ -47,10 +53,13 @@ public class VerticalAmpMovement : MonoBehaviour
     }
 
     void turnBack() {
+        
         if (targetPosition == righLimit) {
+            spriteRenderer.flipX = false;
             targetPosition = leftLimit;
 
         } else {
+            spriteRenderer.flipX = true;
             targetPosition = righLimit;
             
         }
