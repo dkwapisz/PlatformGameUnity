@@ -19,6 +19,7 @@ TagManager:
   - IntegralCage
   - Integral
   - IntergralS2
+  - PlayerSprite
   - Spikes
   - Weapon
   layers:
