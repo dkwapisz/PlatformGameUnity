@@ -14,6 +14,7 @@ public class CharacterController2D : MonoBehaviour {
     private Vector2 currentVelocity;
     private GameObject playerSprite;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private Vector2 standColliderSize;
     private Vector2 standColliderOffset;
@@ -31,6 +32,7 @@ public class CharacterController2D : MonoBehaviour {
         rb2D = GetComponent<Rigidbody2D>();
         playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         animator = playerSprite.GetComponent<Animator>();
+        spriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
         playerMaterial = new PhysicsMaterial2D();
         playerMaterial.friction = 0.4f;
@@ -49,6 +51,8 @@ public class CharacterController2D : MonoBehaviour {
         HandleCrouching();
         HandleRunning();
         ChangeFrictionByVelocity();
+        HandleFlipSprite();
+        HandleDeath();
     }
 
     private void FixedUpdate() {
@@ -64,6 +68,23 @@ public class CharacterController2D : MonoBehaviour {
         }
         else {
             isRunning = false;
+        }
+    }
+
+    private void HandleDeath() { //to expand
+        if (false) {
+            animator.SetTrigger("Dies");
+        }
+    }
+
+    private void HandleFlipSprite() {
+        if (rb2D.velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else {
+            spriteRenderer.flipX = false;
+            //spriteRenderer.transform.position -= Vector3(-1,0,0);
         }
     }
     
@@ -127,6 +148,11 @@ public class CharacterController2D : MonoBehaviour {
         if (isCrouching) {
             playerCollider2D.size = crouchColliderSize;
             playerCollider2D.offset = crouchColliderOffset;
+            animator.SetBool("Crouch", true);
+        }
+        else
+        {
+            animator.SetBool("Crouch", false);
         }
     }
 
