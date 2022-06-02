@@ -10,6 +10,7 @@ public class CharacterController2D : MonoBehaviour {
 
     private Rigidbody2D rb2D;
     private BoxCollider2D playerCollider2D;
+    private CharacterBehaviour playerBehaviour;
     private PhysicsMaterial2D playerMaterial;
     private Vector2 currentVelocity;
     private GameObject playerSprite;
@@ -25,8 +26,10 @@ public class CharacterController2D : MonoBehaviour {
     private bool alreadyJumping;
     private bool isCrouching;
     private bool isRunning;
-    
-    public Animation anim;
+  
+    private bool throwBullet;
+    public int forwardDirection = 1;
+
 
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
@@ -34,6 +37,7 @@ public class CharacterController2D : MonoBehaviour {
         animator = playerSprite.GetComponent<Animator>();
         spriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+        playerBehaviour = GetComponent<CharacterBehaviour>();
         playerMaterial = new PhysicsMaterial2D();
         playerMaterial.friction = 0.4f;
         playerCollider2D.sharedMaterial = playerMaterial;
@@ -60,6 +64,7 @@ public class CharacterController2D : MonoBehaviour {
         Jump();
         Crouch();
         StandUp();
+        HandleThrow();
     }
 
     private void HandleRunning() {
@@ -121,7 +126,14 @@ public class CharacterController2D : MonoBehaviour {
         moveHorizontal = Input.GetAxis("Horizontal");
         currentVelocity = rb2D.velocity;
     }
-    
+
+    void HandleThrow()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl)) {
+            ThrowBullet();
+        }
+    }
+
     private void MoveHorizontal() {
         if (moveHorizontal != 0) {
             animator.SetBool("IsRunning", true);
@@ -129,6 +141,12 @@ public class CharacterController2D : MonoBehaviour {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed, currentVelocity.y);
             } else {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed * runningSpeedFactor, currentVelocity.y);
+            }
+            if (moveHorizontal < 0) {
+                forwardDirection = -1;
+            } else if (moveHorizontal < 0)
+            {
+                forwardDirection = 1;
             }
         }
         else {
@@ -161,6 +179,10 @@ public class CharacterController2D : MonoBehaviour {
             playerCollider2D.size = standColliderSize;
             playerCollider2D.offset = standColliderOffset;
         }
+    }
+
+    void ThrowBullet() {
+        playerBehaviour.throwBullet();
     }
 
     private bool IsPlayerUnderWall() {
