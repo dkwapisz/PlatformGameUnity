@@ -20,6 +20,7 @@ TagManager:
   - Integral
   - IntergralS2
   - Spikes
+  - Weapon
   layers:
   - Default
   - TransparentFX

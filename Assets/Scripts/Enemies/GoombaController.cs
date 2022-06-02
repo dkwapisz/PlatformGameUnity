@@ -5,8 +5,6 @@ public class GoombaController : MonoBehaviour
 {
 
     [SerializeField] int bounceForce = 8;
-    [SerializeField] int cooldownSeconds = 2;
-    private bool damageCooldownActive = false;
     private GameObject player;
     private Vector2 topDirection = Vector2.down;
     private Vector2 bottomDirection = Vector2.up;
@@ -36,22 +34,22 @@ public class GoombaController : MonoBehaviour
             if (Vector2.Angle(allCollisionPoints[i].normal, topDirection) <= contactThreshold)
             {
                 topCollision();
-                Debug.Log("GOOMBA: Collision on the top");
+                // Debug.Log("GOOMBA: Collision on the top");
             }
             else if (Vector2.Angle(allCollisionPoints[i].normal, bottomDirection) <= contactThreshold)
             {
                 bottomCollision();
-                Debug.Log("GOOMBA: Collision on the bottom");
+                // Debug.Log("GOOMBA: Collision on the bottom");
             }
             else if (Vector2.Angle(allCollisionPoints[i].normal, leftDirection) <= contactThreshold)
             {
                 leftCollision();
-                Debug.Log("GOOMBA: Collision on the left");
+                // Debug.Log("GOOMBA: Collision on the left");
             }
             else if (Vector2.Angle(allCollisionPoints[i].normal, rightDirection) <= contactThreshold)
             {
                 rightCollision();
-                Debug.Log("GOOMBA: Collision on the right");
+                // Debug.Log("GOOMBA: Collision on the right");
             }
         }
     }
@@ -83,23 +81,12 @@ public class GoombaController : MonoBehaviour
 
     void hurtPlayer() {
 
-        if (!damageCooldownActive) {
-            player.GetComponent<CharacterBehaviour>().health -= 1;
-            StartCoroutine(activateCooldown());
-        }
+        player.GetComponent<CharacterBehaviour>().hurt();
     }
 
     void bouncePlayer(Vector2 force)
     {
         player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
-        Debug.Log("Player: Health decreased. Health: " + player.GetComponent<CharacterBehaviour>().health);
     }
-
-    IEnumerator activateCooldown(){
-        damageCooldownActive = true;
-        yield return new WaitForSeconds(cooldownSeconds);
-        damageCooldownActive = false;
-    }
-
 
 }
