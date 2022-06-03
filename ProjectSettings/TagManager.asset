@@ -23,6 +23,9 @@ TagManager:
   - Spikes
   - Weapon
   - GoombaSprite
+  - HealthBar
+  - MarksUI
+  - BottlesUI
   layers:
   - Default
   - TransparentFX
