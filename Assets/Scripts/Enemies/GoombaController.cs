@@ -11,10 +11,14 @@ public class GoombaController : MonoBehaviour
     private Vector2 leftDirection = Vector2.right;
     private Vector2 rightDirection = Vector2.left;
     private float contactThreshold = 30;
+    private GameObject goombaSprite;
+    private Animator animator;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        goombaSprite = GameObject.FindGameObjectWithTag("GoombaSprite");
+        animator = goombaSprite.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,22 +74,25 @@ public class GoombaController : MonoBehaviour
     void topCollision()
     {
         bouncePlayer(new Vector2(0, bounceForce));
+        animator.SetTrigger("Death");
         Destroy(gameObject);
     }
 
     void bottomCollision()
     {
         bouncePlayer(new Vector2(0, -bounceForce));
+        
         Destroy(gameObject);
     }
 
     void hurtPlayer() {
-
+        animator.SetTrigger("Attack");
         player.GetComponent<CharacterBehaviour>().hurt();
     }
 
     void bouncePlayer(Vector2 force)
     {
+        animator.SetTrigger("Death");
         player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
