@@ -63,6 +63,6 @@ public class VerticalAmpMovement : MonoBehaviour
             targetPosition = righLimit;
             
         }
-        Debug.Log("GOOMBA: Turned back");
+        // Debug.Log("GOOMBA: Turned back");
     }
 }

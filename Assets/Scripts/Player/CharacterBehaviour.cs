@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class CharacterBehaviour : MonoBehaviour {
 
-    [SerializeField] int cooldownSeconds = 2;
+    [SerializeField] float damageCooldownSeconds = 2.0f;
+    [SerializeField] float throwCooldownSeconds = 0.5f;
     [SerializeField] Rigidbody2D bulletPrefab;
     public int health = 5;
     public int maxHealth = 5;
@@ -18,6 +19,7 @@ public class CharacterBehaviour : MonoBehaviour {
     public float bulletTorque = 2.0f;
     Vector2 throwDirection = new Vector2(0.5f, 0.5f);
     private bool damageCooldownActive = false;
+    private bool throwCooldownActive = false;
     private Rigidbody2D rb2D;
     private GameObject healthBar;
     private Slider healthSlider;
@@ -44,8 +46,7 @@ public class CharacterBehaviour : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        refreshThrowDirection();
-        updateUI();
+            updateUI();
     }
 
     private void updateUI() {
@@ -101,36 +102,46 @@ public class CharacterBehaviour : MonoBehaviour {
         }
     }
 
-    public void hurt() {
+    public void hurt(int damage = 1) {
         if (!damageCooldownActive)
         {
-            health -= 1;
+            health = health - damage;
             Debug.Log("Player hurt: Current HP: " + health);
-            StartCoroutine(activateCooldown());
+            StartCoroutine(activateDamageCooldown());
         }
 
     }
 
     public void throwBullet() {
-        if (ammo > 0) {
+        if (ammo > 0 && !throwCooldownActive) {
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.velocity = transform.TransformDirection(throwDirection * throwForce);
+            bullet.velocity = transform.TransformDirection(throwDirection * throwForce + GetComponent<Rigidbody2D>().velocity);
             bullet.AddTorque(bulletTorque, ForceMode2D.Impulse);
             ammo--;
+            StartCoroutine(activateThrowCooldown());
             Debug.Log("Bullet thrown in direction: " + throwDirection.x);
         }
     }
 
-    public void refreshThrowDirection() {
-        throwDirection.x = throwDirection.x * GetComponent<CharacterController2D>().forwardDirection;
+    public void playerTurnedBack() {
+        throwDirection.x = -throwDirection.x;
     }
 
-    IEnumerator activateCooldown()
+    IEnumerator activateDamageCooldown()
     {
         damageCooldownActive = true;
         Debug.Log("Damage cooldown activated");
-        yield return new WaitForSeconds(cooldownSeconds);
+        yield return new WaitForSeconds(damageCooldownSeconds);
         damageCooldownActive = false;
         Debug.Log("Damage cooldown deactivated");
+    }
+
+    IEnumerator activateThrowCooldown()
+    {
+        throwCooldownActive = true;
+        Debug.Log("Throw cooldown activated");
+        yield return new WaitForSeconds(throwCooldownSeconds);
+        throwCooldownActive = false;
+        Debug.Log("Trow cooldown deactivated");
     }
 }
