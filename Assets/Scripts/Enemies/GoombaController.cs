@@ -1,11 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class GoombaController : MonoBehaviour
+public class GoombaController : Enemy
 {
 
-    [SerializeField] int bounceForce = 8;
-    private GameObject player;
+    
     private Vector2 topDirection = Vector2.down;
     private Vector2 bottomDirection = Vector2.up;
     private Vector2 leftDirection = Vector2.right;
@@ -14,20 +13,16 @@ public class GoombaController : MonoBehaviour
     private GameObject goombaSprite;
     private Animator animator;
 
-    void Start()
+    protected override void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        base.Start();
         goombaSprite = GameObject.FindGameObjectWithTag("GoombaSprite");
         animator = goombaSprite.GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void collisionWithPlayer(Collision2D collision)
     {
-
-        if (collision.gameObject.tag == "Player")
-        {
-            checkCollisionDirection(collision.contacts);
-        }
+        checkCollisionDirection(collision.contacts);
     }
 
     void checkCollisionDirection(ContactPoint2D[] allCollisionPoints)
@@ -62,38 +57,37 @@ public class GoombaController : MonoBehaviour
     void leftCollision()
     {
         hurtPlayer();
-        bouncePlayer(new Vector2(-bounceForce / 2, 0));
+        bouncePlayer();
     }
 
     void rightCollision()
     {
         hurtPlayer();
-        bouncePlayer(new Vector2(bounceForce / 2, 0));
+        bouncePlayer();
     }
 
     void topCollision()
     {
-        bouncePlayer(new Vector2(0, bounceForce));
+        bouncePlayer();
         animator.SetTrigger("Death");
-        Destroy(gameObject);
+        hurt();
     }
 
     void bottomCollision()
     {
-        bouncePlayer(new Vector2(0, -bounceForce));
-        
-        Destroy(gameObject);
+        bouncePlayer();
+        hurt();
     }
 
-    void hurtPlayer() {
+    protected override void hurtPlayer(int damage = 1) {
+        base.hurtPlayer();
         animator.SetTrigger("Attack");
-        player.GetComponent<CharacterBehaviour>().hurt();
     }
 
-    void bouncePlayer(Vector2 force)
+    protected override void bouncePlayer()
     {
+        base.bouncePlayer();
         animator.SetTrigger("Death");
-        player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
 
 }

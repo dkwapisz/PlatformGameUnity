@@ -28,10 +28,12 @@ public class CharacterController2D : MonoBehaviour {
     private bool isRunning;
   
     private bool throwBullet;
-    public int forwardDirection = 1;
+    public int forwardDirection;
 
 
     void Start() {
+        forwardDirection =  1;
+
         rb2D = GetComponent<Rigidbody2D>();
         playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         animator = playerSprite.GetComponent<Animator>();
@@ -142,11 +144,18 @@ public class CharacterController2D : MonoBehaviour {
             } else {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed * runningSpeedFactor, currentVelocity.y);
             }
-            if (moveHorizontal < 0) {
-                forwardDirection = -1;
-            } else if (moveHorizontal < 0)
-            {
-                forwardDirection = 1;
+            if (moveHorizontal > 0) {
+                if (forwardDirection != 1) {
+                    playerTurnedBack(1);
+
+                }
+
+            } else if (moveHorizontal < 0) {
+                if (forwardDirection != -1) {
+                    playerTurnedBack(-1);
+            
+                }
+
             }
         }
         else {
@@ -179,6 +188,12 @@ public class CharacterController2D : MonoBehaviour {
             playerCollider2D.size = standColliderSize;
             playerCollider2D.offset = standColliderOffset;
         }
+    }
+
+    public void playerTurnedBack(int factor) {
+        forwardDirection = factor;
+        GetComponent<CharacterBehaviour>().playerTurnedBack();
+        Debug.Log("Player turned back.");
     }
 
     void ThrowBullet() {
