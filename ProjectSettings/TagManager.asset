@@ -21,6 +21,7 @@ TagManager:
   - IntergralS2
   - PlayerSprite
   - Spikes
+  - ReverseGravityTool
   - Weapon
   - GoombaSprite
   - HealthBar

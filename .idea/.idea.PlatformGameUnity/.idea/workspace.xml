@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Integral enemy - splits in two when P key pressed - prefab spawn from code,destroys old object. Integral Cage - area for integrals to move. New Layers.">
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="BugFixed - można skakać z odwróconą grawitacją.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoombaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoombaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/VerticalAmpMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/VerticalAmpMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ReverseGravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ReverseGravity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +77,8 @@
       <workItem from="1651747543277" duration="3521000" />
       <workItem from="1653646435194" duration="7358000" />
       <workItem from="1653732061703" duration="6613000" />
+      <workItem from="1654170363910" duration="7179000" />
+      <workItem from="1654419757861" duration="3621000" />
       <workItem from="1653917377644" duration="2735000" />
       <workItem from="1654168085424" duration="11961000" />
     </task>
