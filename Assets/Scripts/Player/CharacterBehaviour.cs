@@ -56,13 +56,15 @@ public class CharacterBehaviour : MonoBehaviour {
     }
     
     private void OnTriggerEnter2D(Collider2D collider) {
+
         if (collider.gameObject.tag.Equals("Beer") ||
             collider.gameObject.tag.Equals("Mark") ||
             collider.gameObject.tag.Equals("Weapon")) {
 
             collect(collider);
         }
-        if (collider.CompareTag("IntegralCage")) {
+        if (collider.CompareTag("IntegralCage"))
+        {
             Physics2D.IgnoreLayerCollision(3,8, true);//3 Player Layer //8 IntegralCageLayer
         }
     }
