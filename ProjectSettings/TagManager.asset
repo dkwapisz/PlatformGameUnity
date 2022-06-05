@@ -26,6 +26,7 @@ TagManager:
   - HealthBar
   - MarksUI
   - BottlesUI
+  - ReverseGravityTool
   layers:
   - Default
   - TransparentFX
