@@ -19,8 +19,14 @@ TagManager:
   - IntegralCage
   - Integral
   - IntergralS2
+  - PlayerSprite
   - Spikes
   - ReverseGravityTool
+  - Weapon
+  - GoombaSprite
+  - HealthBar
+  - MarksUI
+  - BottlesUI
   layers:
   - Default
   - TransparentFX

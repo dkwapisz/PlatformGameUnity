@@ -1,31 +1,28 @@
 using UnityEngine;
 using System.Collections;
 
-public class GoombaController : MonoBehaviour
+public class GoombaController : Enemy
 {
 
-    [SerializeField] int bounceForce = 8;
-    [SerializeField] int cooldownSeconds = 2;
-    private bool damageCooldownActive = false;
-    private GameObject player;
+    
     private Vector2 topDirection = Vector2.down;
     private Vector2 bottomDirection = Vector2.up;
     private Vector2 leftDirection = Vector2.right;
     private Vector2 rightDirection = Vector2.left;
     private float contactThreshold = 30;
+    private GameObject goombaSprite;
+    private Animator animator;
 
-    void Start()
+    protected override void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        base.Start();
+        goombaSprite = GameObject.FindGameObjectWithTag("GoombaSprite");
+        animator = goombaSprite.GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void collisionWithPlayer(Collision2D collision)
     {
-
-        if (collision.gameObject.tag == "Player")
-        {
-            checkCollisionDirection(collision.contacts);
-        }
+        checkCollisionDirection(collision.contacts);
     }
 
     void checkCollisionDirection(ContactPoint2D[] allCollisionPoints)
@@ -36,22 +33,22 @@ public class GoombaController : MonoBehaviour
             if (Vector2.Angle(allCollisionPoints[i].normal, topDirection) <= contactThreshold)
             {
                 topCollision();
-                Debug.Log("GOOMBA: Collision on the top");
+                // Debug.Log("GOOMBA: Collision on the top");
             }
             else if (Vector2.Angle(allCollisionPoints[i].normal, bottomDirection) <= contactThreshold)
             {
                 bottomCollision();
-                Debug.Log("GOOMBA: Collision on the bottom");
+                // Debug.Log("GOOMBA: Collision on the bottom");
             }
             else if (Vector2.Angle(allCollisionPoints[i].normal, leftDirection) <= contactThreshold)
             {
                 leftCollision();
-                Debug.Log("GOOMBA: Collision on the left");
+                // Debug.Log("GOOMBA: Collision on the left");
             }
             else if (Vector2.Angle(allCollisionPoints[i].normal, rightDirection) <= contactThreshold)
             {
                 rightCollision();
-                Debug.Log("GOOMBA: Collision on the right");
+                // Debug.Log("GOOMBA: Collision on the right");
             }
         }
     }
@@ -60,46 +57,37 @@ public class GoombaController : MonoBehaviour
     void leftCollision()
     {
         hurtPlayer();
-        bouncePlayer(new Vector2(-bounceForce / 2, 0));
+        bouncePlayer();
     }
 
     void rightCollision()
     {
         hurtPlayer();
-        bouncePlayer(new Vector2(bounceForce / 2, 0));
+        bouncePlayer();
     }
 
     void topCollision()
     {
-        bouncePlayer(new Vector2(0, bounceForce));
-        Destroy(gameObject);
+        bouncePlayer();
+        animator.SetTrigger("Death");
+        hurt();
     }
 
     void bottomCollision()
     {
-        bouncePlayer(new Vector2(0, -bounceForce));
-        Destroy(gameObject);
+        bouncePlayer();
+        hurt();
     }
 
-    void hurtPlayer() {
-
-        if (!damageCooldownActive) {
-            player.GetComponent<CharacterBehaviour>().health -= 1;
-            StartCoroutine(activateCooldown());
-        }
+    protected override void hurtPlayer(int damage = 1) {
+        base.hurtPlayer();
+        animator.SetTrigger("Attack");
     }
 
-    void bouncePlayer(Vector2 force)
+    protected override void bouncePlayer()
     {
-        player.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
-        Debug.Log("Player: Health decreased. Health: " + player.GetComponent<CharacterBehaviour>().health);
+        base.bouncePlayer();
+        animator.SetTrigger("Death");
     }
-
-    IEnumerator activateCooldown(){
-        damageCooldownActive = true;
-        yield return new WaitForSeconds(cooldownSeconds);
-        damageCooldownActive = false;
-    }
-
 
 }

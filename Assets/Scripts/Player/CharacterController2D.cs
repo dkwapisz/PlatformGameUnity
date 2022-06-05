@@ -10,8 +10,12 @@ public class CharacterController2D : MonoBehaviour {
 
     private Rigidbody2D rb2D;
     private BoxCollider2D playerCollider2D;
+    private CharacterBehaviour playerBehaviour;
     private PhysicsMaterial2D playerMaterial;
     private Vector2 currentVelocity;
+    private GameObject playerSprite;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private Vector2 standColliderSize;
     private Vector2 standColliderOffset;
@@ -24,15 +28,23 @@ public class CharacterController2D : MonoBehaviour {
     private bool isRunning;
     
     ReverseGravity reverseGravity;
+  
+    private bool throwBullet;
+    public int forwardDirection;
 
-    void Awake()
-    {
+    void Awake() {
         reverseGravity = GameObject.Find("Player").GetComponent<ReverseGravity>();
     }
-
+  
     void Start() {
+        forwardDirection =  1;
+
         rb2D = GetComponent<Rigidbody2D>();
+        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
+        animator = playerSprite.GetComponent<Animator>();
+        spriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+        playerBehaviour = GetComponent<CharacterBehaviour>();
         playerMaterial = new PhysicsMaterial2D();
         playerMaterial.friction = 0.4f;
         playerCollider2D.sharedMaterial = playerMaterial;
@@ -49,9 +61,10 @@ public class CharacterController2D : MonoBehaviour {
         HandleJumping();
         HandleCrouching();
         HandleRunning();
-        ChangeFrictionByVelocity();
-        
+        ChangeFrictionByVelocity(); 
         //Debug.Log(reverseGravity.isGravityNormal);
+        HandleFlipSprite();
+        HandleDeath();
     }
 
     private void FixedUpdate() {
@@ -59,6 +72,7 @@ public class CharacterController2D : MonoBehaviour {
         Jump();
         Crouch();
         StandUp();
+        HandleThrow();
     }
 
     private void HandleRunning() {
@@ -67,6 +81,23 @@ public class CharacterController2D : MonoBehaviour {
         }
         else {
             isRunning = false;
+        }
+    }
+
+    private void HandleDeath() { //to expand
+        if (false) {
+            animator.SetTrigger("Dies");
+        }
+    }
+
+    private void HandleFlipSprite() {
+        if (rb2D.velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else {
+            spriteRenderer.flipX = false;
+            //spriteRenderer.transform.position -= Vector3(-1,0,0);
         }
     }
     
@@ -103,14 +134,38 @@ public class CharacterController2D : MonoBehaviour {
         moveHorizontal = Input.GetAxis("Horizontal");
         currentVelocity = rb2D.velocity;
     }
-    
+
+    void HandleThrow()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl)) {
+            ThrowBullet();
+        }
+    }
+
     private void MoveHorizontal() {
         if (moveHorizontal != 0) {
+            animator.SetBool("IsRunning", true);
             if (!isRunning) {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed, currentVelocity.y);
             } else {
                 rb2D.velocity = new Vector2(moveHorizontal * movementSpeed * runningSpeedFactor, currentVelocity.y);
             }
+            if (moveHorizontal > 0) {
+                if (forwardDirection != 1) {
+                    playerTurnedBack(1);
+
+                }
+
+            } else if (moveHorizontal < 0) {
+                if (forwardDirection != -1) {
+                    playerTurnedBack(-1);
+            
+                }
+
+            }
+        }
+        else {
+            animator.SetBool("IsRunning", false);
         }
     }
 
@@ -118,6 +173,7 @@ public class CharacterController2D : MonoBehaviour {
         if (isJumping && !alreadyJumping) {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
             alreadyJumping = true;
+            animator.SetTrigger("Jump");
         }
     }
 
@@ -125,6 +181,11 @@ public class CharacterController2D : MonoBehaviour {
         if (isCrouching) {
             playerCollider2D.size = crouchColliderSize;
             playerCollider2D.offset = crouchColliderOffset;
+            animator.SetBool("Crouch", true);
+        }
+        else
+        {
+            animator.SetBool("Crouch", false);
         }
     }
 
@@ -133,6 +194,16 @@ public class CharacterController2D : MonoBehaviour {
             playerCollider2D.size = standColliderSize;
             playerCollider2D.offset = standColliderOffset;
         }
+    }
+
+    public void playerTurnedBack(int factor) {
+        forwardDirection = factor;
+        GetComponent<CharacterBehaviour>().playerTurnedBack();
+        Debug.Log("Player turned back.");
+    }
+
+    void ThrowBullet() {
+        playerBehaviour.throwBullet();
     }
 
     private bool IsPlayerUnderWall() {
