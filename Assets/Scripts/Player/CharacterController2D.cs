@@ -22,6 +22,13 @@ public class CharacterController2D : MonoBehaviour {
     private bool alreadyJumping;
     private bool isCrouching;
     private bool isRunning;
+    
+    ReverseGravity reverseGravity;
+
+    void Awake()
+    {
+        reverseGravity = GameObject.Find("Player").GetComponent<ReverseGravity>();
+    }
 
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
@@ -43,6 +50,8 @@ public class CharacterController2D : MonoBehaviour {
         HandleCrouching();
         HandleRunning();
         ChangeFrictionByVelocity();
+        
+        //Debug.Log(reverseGravity.isGravityNormal);
     }
 
     private void FixedUpdate() {
@@ -170,12 +179,44 @@ public class CharacterController2D : MonoBehaviour {
         RaycastHit2D hitDownRight = Physics2D.Raycast(transform.position + transform.right / 4,
             Vector2.down,
             standColliderSize.magnitude);
-
-        return hitDown.collider || 
-               hitDownLeft || 
-               hitDownRight || 
-               hitDownLeftLeft || 
-               hitDownRightRight;
+        
+        RaycastHit2D hitUp = Physics2D.Raycast(transform.position,
+            Vector2.up,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitUpLeftLeft = Physics2D.Raycast(transform.position - transform.right / 2,
+            Vector2.up,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitUpLeft = Physics2D.Raycast(transform.position - transform.right / 4,
+            Vector2.up,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitUpRightRight = Physics2D.Raycast(transform.position + transform.right / 2,
+            Vector2.up,
+            standColliderSize.magnitude);
+        
+        RaycastHit2D hitUpRight = Physics2D.Raycast(transform.position + transform.right / 4,
+            Vector2.up,
+            standColliderSize.magnitude);
+        
+       
+        
+        if (reverseGravity.isGravityNormal)
+        {
+             return hitDown.collider || 
+                    hitDownLeft || 
+                    hitDownRight || 
+                    hitDownLeftLeft || 
+                    hitDownRightRight;
+        }
+        return hitUp.collider || 
+               hitUpLeft || 
+               hitUpRight || 
+               hitUpLeftLeft || 
+               hitUpRightRight;
+        
+        
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {

@@ -15,12 +15,6 @@ public class ReverseGravity : MonoBehaviour
         isGravityNormal = true;
         rb2D = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag.Equals("ReverseGravityTool"))
