@@ -28,6 +28,12 @@ public class CharacterBehaviour : MonoBehaviour {
     private GameObject bottlesUI;
     private Text bottlesAmount;
     
+    [SerializeField] private AudioSource beerCollectSoundEffect;
+    [SerializeField] private AudioSource ectsCollectSoundEffect;
+    [SerializeField] private AudioSource bottleCollectSoundEffect;
+    [SerializeField] private AudioSource bottleThrowSoundEffect;
+    
+    
 
     private void Start() {
         rb2D = GetComponent<Rigidbody2D>();
@@ -76,6 +82,7 @@ public class CharacterBehaviour : MonoBehaviour {
                 if (health != maxHealth) {
                     health += 1;
                     Debug.Log("Beer collected. Health: " + health);
+                    beerCollectSoundEffect.Play();
                     Destroy(collider.gameObject);
                 }
                 break;
@@ -84,11 +91,13 @@ public class CharacterBehaviour : MonoBehaviour {
                 marks += 1;
                 Debug.Log("Mark collected. Marks: " + marks);
                 Destroy(collider.gameObject);
+                ectsCollectSoundEffect.Play();
                 break;
 
             case "Weapon":
                 ammo += 10;
                 Debug.Log("Empty bottles collected. Bottles: " + ammo);
+                bottleCollectSoundEffect.Play();
                 Destroy(collider.gameObject);
                 break;
         }
@@ -117,6 +126,7 @@ public class CharacterBehaviour : MonoBehaviour {
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.velocity = transform.TransformDirection(throwDirection * throwForce + GetComponent<Rigidbody2D>().velocity);
             bullet.AddTorque(bulletTorque, ForceMode2D.Impulse);
+            bottleThrowSoundEffect.Play();
             ammo--;
             StartCoroutine(activateThrowCooldown());
             Debug.Log("Bullet thrown in direction: " + throwDirection.x);

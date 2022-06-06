@@ -32,6 +32,8 @@ public class CharacterController2D : MonoBehaviour {
     
     ReverseGravity reverseGravity;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     void Awake()
     {
         reverseGravity = GameObject.Find("Player").GetComponent<ReverseGravity>();
@@ -173,6 +175,7 @@ public class CharacterController2D : MonoBehaviour {
         if (isJumping && !alreadyJumping) {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
             alreadyJumping = true;
+            jumpSoundEffect.Play();
             animator.SetTrigger("Jump");
         }
     }
