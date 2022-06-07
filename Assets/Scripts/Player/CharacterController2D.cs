@@ -199,7 +199,7 @@ public class CharacterController2D : MonoBehaviour {
     public void playerTurnedBack(int factor) {
         forwardDirection = factor;
         GetComponent<CharacterBehaviour>().playerTurnedBack();
-        Debug.Log("Player turned back.");
+        // Debug.Log("Player turned back.");
     }
 
     void ThrowBullet() {
