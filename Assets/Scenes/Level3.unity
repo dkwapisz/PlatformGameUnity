@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06784614, g: 0.274145, b: 0.48477334, a: 1}
+  m_IndirectSpecularColor: {r: 0.06784767, g: 0.27414504, b: 0.48477304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5496,7 +5496,7 @@ Transform:
   - {fileID: 945090285}
   - {fileID: 471712531}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1088740195
 PrefabInstance:
@@ -5943,11 +5943,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9192499339774560515, guid: 48cc53ed65ab2794d9c233fc04727595, type: 3}
   m_PrefabInstance: {fileID: 1152444409}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1232834908 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2027229377958960803, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
-  m_PrefabInstance: {fileID: 1453426889}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1256248462
 PrefabInstance:
@@ -6756,6 +6751,10 @@ PrefabInstance:
     - target: {fileID: 4525830304310930615, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5926354
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
@@ -7943,6 +7942,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9192499339774560515, guid: 1568fbadfe7eb0145baafc86f5fdea5e, type: 3}
   m_PrefabInstance: {fileID: 1817147172}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1820350291 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+  m_PrefabInstance: {fileID: 1453426889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1833936545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7997,7 +8001,7 @@ PrefabInstance:
     - target: {fileID: 7218514312882521933, guid: ff0255a632b0b2c4ba017d01c7e6a714, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1232834908}
+      objectReference: {fileID: 1820350291}
     - target: {fileID: 7218514312882522032, guid: ff0255a632b0b2c4ba017d01c7e6a714, type: 3}
       propertyPath: m_Name
       value: Main Camera
