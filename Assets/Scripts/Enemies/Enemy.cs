@@ -56,4 +56,7 @@ public class Enemy : MonoBehaviour
         player.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(bounceDirection * bounceForce);
     }
     
+    protected virtual void destroyObject() {
+        Destroy(gameObject);
+    }
 }

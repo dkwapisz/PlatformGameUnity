@@ -16,7 +16,6 @@ public class CharacterController2D : MonoBehaviour {
     private GameObject playerSprite;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private Vector3 spritePosition;
     private bool spriteIsOffsetted;
 
     private Vector2 standColliderSize;
@@ -67,8 +66,7 @@ public class CharacterController2D : MonoBehaviour {
         HandleRunning();
         ChangeFrictionByVelocity();
         HandleFlipSprite();
-        HandleDeath();
-        spritePosition = playerSprite.transform.position;
+        //HandleDeath();
     }
 
     private void FixedUpdate() {
