@@ -6,11 +6,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int bounceForce = 8;
     protected bool died;
     protected GameObject player;
+
+    private Animator _animator;
+    private GameObject boss1Sprite;
     // Start is called before the first frame update
     protected virtual void Start()
     {
         died = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        if (gameObject == GameObject.FindGameObjectWithTag("Boss1Sprite"))
+        {
+            boss1Sprite = GameObject.FindGameObjectWithTag("Boss1Sprite");
+            _animator = boss1Sprite.GetComponent<Animator>();
+        }
     }
 
     protected virtual void FixedUpdate()
@@ -20,7 +28,6 @@ public class Enemy : MonoBehaviour
            Destroy(gameObject.GetComponent<SpriteRenderer>());
            Destroy(gameObject);
        }
-       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,6 +36,19 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             collisionWithPlayer(collision);
+            //Debug.Log("im in");
+            // if (gameObject == GameObject.FindGameObjectWithTag("Boss1Sprite")) {
+            //     int randomNumber = Random.Range(1, 6);
+            //     if (randomNumber is 1 or 2) {
+            //         _animator.SetTrigger("Attack");
+            //     } else if (randomNumber is 3 or 4) {
+            //         _animator.SetTrigger("Attack 2");
+            //     } else if (randomNumber is 5 or 6) {
+            //         _animator.SetTrigger("Attack 3");
+            //     }
+            //     Debug.Log(randomNumber);
+            // }
+        
         }
     }
 
