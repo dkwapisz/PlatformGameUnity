@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -18,8 +16,11 @@ public class Enemy : MonoBehaviour
     protected virtual void FixedUpdate()
     {
        if (died) {
-           destroyObject();
+           Destroy(gameObject.GetComponent<Animator>());
+           Destroy(gameObject.GetComponent<SpriteRenderer>());
+           Destroy(gameObject);
        }
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,8 +55,5 @@ public class Enemy : MonoBehaviour
         Vector3 bounceDirection = (playerDirection - transform.position).normalized;
         player.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(bounceDirection * bounceForce);
     }
-
-    protected virtual void destroyObject() {
-        Destroy(gameObject);
-    }
+    
 }

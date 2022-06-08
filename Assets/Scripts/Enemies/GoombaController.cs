@@ -67,7 +67,6 @@ public class GoombaController : Enemy
     void topCollision()
     {
         bouncePlayer();
-        animator.SetTrigger("Death");
         hurt();
     }
 
@@ -86,6 +85,7 @@ public class GoombaController : Enemy
     {
         base.bouncePlayer();
         animator.SetTrigger("Death");
+        
     }
 
 }
