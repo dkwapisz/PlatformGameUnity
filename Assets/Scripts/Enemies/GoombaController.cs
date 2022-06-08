@@ -14,7 +14,7 @@ public class GoombaController : Enemy
     protected override void Start()
     {
         base.Start();
-        goombaSprite = GameObject.FindGameObjectWithTag("GoombaSprite");
+        goombaSprite = gameObject.transform.GetChild(0).gameObject;
         animator = goombaSprite.GetComponent<Animator>();
     }
 
