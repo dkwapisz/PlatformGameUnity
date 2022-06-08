@@ -18,8 +18,11 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
        if (died) {
+           Destroy(gameObject.GetComponent<Animator>());
+           Destroy(gameObject.GetComponent<SpriteRenderer>());
            Destroy(gameObject);
        }
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
