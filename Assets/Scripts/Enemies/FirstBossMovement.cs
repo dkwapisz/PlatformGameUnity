@@ -12,6 +12,12 @@ public class FirstBossMovement : MonoBehaviour
     Vector2 hopRightDirection;
     GameObject player;
     Rigidbody2D rigidbody;
+    
+    private GameObject boss1Sprite;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private GameObject boss2Sprite;
+    
     public bool stopMoving = false;
     bool isGrounded = true;
     bool hopToRight = false;
@@ -23,9 +29,20 @@ public class FirstBossMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        boss1Sprite = GameObject.FindGameObjectWithTag("Boss1Sprite");
+        boss2Sprite = GameObject.FindGameObjectWithTag("Boss2Sprite");
+        if (boss1Sprite != null) {
+            animator = boss1Sprite.GetComponent<Animator>();
+            spriteRenderer = boss1Sprite.GetComponent<SpriteRenderer>();
+        } else if (boss2Sprite != null) {
+            animator = boss2Sprite.GetComponent<Animator>();
+            spriteRenderer = boss2Sprite.GetComponent<SpriteRenderer>();
+        }
+        
         rigidbody = GetComponent<Rigidbody2D>();
         hopRightDirection = hopForce;
         hopLeftDirection = new Vector2(-hopForce.x, hopForce.y);
+        spriteRenderer.flipX = false;
         // distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
@@ -61,9 +78,22 @@ public class FirstBossMovement : MonoBehaviour
 
     void move() {
         if (hopToLeft) {
+            if (boss1Sprite != null) {
+                spriteRenderer.flipX = false;
+            } else if (boss2Sprite != null) {
+                spriteRenderer.flipX = true;
+            }
+            
             rigidbody.velocity = transform.TransformDirection(hopLeftDirection);
             // Debug.Log("Hop on the left");
-        } else if (hopToRight) {
+        } else if (hopToRight)
+        {
+            if (boss1Sprite != null) {
+                spriteRenderer.flipX = true;
+            } else if (boss2Sprite != null) {
+                spriteRenderer.flipX = false;
+            }
+
             rigidbody.velocity = transform.TransformDirection(hopRightDirection);
             // Debug.Log("Hop on the right");
         }

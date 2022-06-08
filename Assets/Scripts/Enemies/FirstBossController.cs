@@ -7,12 +7,23 @@ public class FirstBossController : Enemy
     [SerializeField] GameObject ownPrefab;
     public bool isChild = false;
     int childrenHealthPoints;
+    private GameObject boss1Sprite;
+    private Animator animator;
 
     protected override void Start()
     {
         base.Start();
         childrenHealthPoints = healthPoints/2;
+        
+        boss1Sprite = GameObject.FindGameObjectWithTag("Boss1Sprite");
+        animator = boss1Sprite.GetComponent<Animator>();
     }
+    
+    protected void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+    
     protected override void destroyObject()
     {
         gameObject.SetActive(false);
