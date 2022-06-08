@@ -88,12 +88,6 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void HandleDeath() { //to expand
-        if (false) {
-            animator.SetTrigger("Dies");
-        }
-    }
-
     private void HandleFlipSprite() {
         if (rb2D.velocity.x < 0)
         {
@@ -213,6 +207,7 @@ public class CharacterController2D : MonoBehaviour {
         GetComponent<CharacterBehaviour>().playerTurnedBack();
         Debug.Log("Player turned back.");
         
+        // Debug.Log("Player turned back.");
     }
 
     void ThrowBullet() {
@@ -305,5 +300,9 @@ public class CharacterController2D : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
             isJumping = false;
         }
+    }
+
+    public void HandleDeath() {
+        animator.SetTrigger("Dies");
     }
 }

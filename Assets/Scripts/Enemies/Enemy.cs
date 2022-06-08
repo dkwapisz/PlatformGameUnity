@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -15,7 +13,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
        if (died) {
            Destroy(gameObject.GetComponent<Animator>());
@@ -39,10 +37,12 @@ public class Enemy : MonoBehaviour
         if (healthPoints <= 0) {
             died = true;
         }
+        Debug.Log("Enemy hurt. HP: " + healthPoints);
     }
 
     protected virtual void collisionWithPlayer(Collision2D collision) {
         hurtPlayer();
+        bouncePlayer();
     }
 
     protected virtual void hurtPlayer(int damage = 1) {
@@ -55,4 +55,5 @@ public class Enemy : MonoBehaviour
         Vector3 bounceDirection = (playerDirection - transform.position).normalized;
         player.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(bounceDirection * bounceForce);
     }
+    
 }
