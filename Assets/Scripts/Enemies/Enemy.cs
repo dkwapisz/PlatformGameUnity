@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
        if (died) {
            destroyObject();

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4462687824392647649
+--- !u!1 &2794824493667203244
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4462687824392647651}
-  - component: {fileID: 4462687824392647650}
-  - component: {fileID: 4462687824392647452}
-  - component: {fileID: 4462687824392647453}
-  - component: {fileID: 4462687824392647454}
-  - component: {fileID: 4462687824392647455}
+  - component: {fileID: 2794824493667203246}
+  - component: {fileID: 2794824493667203247}
+  - component: {fileID: 2794824493667203153}
+  - component: {fileID: 2794824493667203152}
+  - component: {fileID: 2794824493667203155}
+  - component: {fileID: 2794824493667203154}
   m_Layer: 0
   m_Name: FirstBoss
   m_TagString: Enemy
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4462687824392647651
+--- !u!4 &2794824493667203246
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462687824392647649}
+  m_GameObject: {fileID: 2794824493667203244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 68.0575, y: -48.4276, z: 0}
   m_LocalScale: {x: 2.7612274, y: 2.4037347, z: 1}
@@ -36,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4462687824392647650
+--- !u!212 &2794824493667203247
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462687824392647649}
+  m_GameObject: {fileID: 2794824493667203244}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,29 +88,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4462687824392647452
+--- !u!114 &2794824493667203153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462687824392647649}
+  m_GameObject: {fileID: 2794824493667203244}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e422a97cd71e984489cd9648c44b6490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hopForce: 4
+  hopForce: {x: 5, y: 2}
   hopCooldownSeconds: 1.5
   viewingDistance: 14
---- !u!50 &4462687824392647453
+--- !u!50 &2794824493667203152
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462687824392647649}
+  m_GameObject: {fileID: 2794824493667203244}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -124,13 +124,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &4462687824392647454
+--- !u!61 &2794824493667203155
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462687824392647649}
+  m_GameObject: {fileID: 2794824493667203244}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -150,13 +150,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4462687824392647455
+--- !u!114 &2794824493667203154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462687824392647649}
+  m_GameObject: {fileID: 2794824493667203244}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 352eafbbb4c494340a07bdd04f905872, type: 3}
@@ -164,5 +164,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 16
   bounceForce: 8
-  ownPrefab: {fileID: 4462687824392647649}
+  ownPrefab: {fileID: 2794824493667203244}
   isChild: 0

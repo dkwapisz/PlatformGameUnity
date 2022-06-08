@@ -64,7 +64,6 @@ public class CharacterController2D : MonoBehaviour {
         HandleRunning();
         ChangeFrictionByVelocity();
         HandleFlipSprite();
-        HandleDeath();
     }
 
     private void FixedUpdate() {
@@ -81,12 +80,6 @@ public class CharacterController2D : MonoBehaviour {
         }
         else {
             isRunning = false;
-        }
-    }
-
-    private void HandleDeath() { //to expand
-        if (false) {
-            animator.SetTrigger("Dies");
         }
     }
 
@@ -292,5 +285,9 @@ public class CharacterController2D : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
             isJumping = false;
         }
+    }
+
+    public void HandleDeath() {
+        animator.SetTrigger("Dies");
     }
 }

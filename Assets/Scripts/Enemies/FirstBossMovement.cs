@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstBossMovement : MonoBehaviour
 {
-    [SerializeField] float hopForce = 0.5f;
+    [SerializeField] Vector2 hopForce = new Vector2(1.0f, 1.0f);
     [SerializeField] float hopCooldownSeconds = 1.0f;
     [SerializeField] float viewingDistance = 20.0f;
     Vector2 playerPosition;
@@ -12,6 +12,7 @@ public class FirstBossMovement : MonoBehaviour
     Vector2 hopRightDirection;
     GameObject player;
     Rigidbody2D rigidbody;
+    public bool stopMoving = false;
     bool isGrounded = true;
     bool hopToRight = false;
     bool hopToLeft = false;
@@ -23,8 +24,8 @@ public class FirstBossMovement : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody2D>();
-        hopLeftDirection = new Vector2(-hopForce, hopForce);
-        hopRightDirection = new Vector2(hopForce, hopForce);
+        hopRightDirection = hopForce;
+        hopLeftDirection = new Vector2(-hopForce.x, hopForce.y);
         // distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
@@ -43,7 +44,10 @@ public class FirstBossMovement : MonoBehaviour
             }
         }
 
-        if ((hopToLeft || hopToRight) && !hopCooldownActive && distanceToPlayer <= viewingDistance) {
+        if ((hopToLeft || hopToRight) && 
+            !hopCooldownActive && 
+            !stopMoving &&
+            distanceToPlayer <= viewingDistance) {
             move();
         }
     }
