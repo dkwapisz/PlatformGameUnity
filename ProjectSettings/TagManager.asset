@@ -29,6 +29,9 @@ TagManager:
   - ReverseGravityTool
   - Boss1Sprite
   - Boss2Sprite
+  - BossDoor
+  - ExitDoor
+  - Boss
   - Boss3Sprite
   - BulletSprite
   layers:
