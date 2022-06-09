@@ -41,6 +41,11 @@ public class SecondBossController : Enemy
             StartCoroutine(playAttackAnimation());
         }
     }
+    
+    public override void hurt(int damage = 1) {
+        base.hurt();
+        animator.SetTrigger("Hit");
+    }
 
     bool isPlayerInAttackRange() {
         playerPosition = player.transform.position;
@@ -70,7 +75,7 @@ public class SecondBossController : Enemy
             animator.SetTrigger("Attack 3");
         }
             
-        Debug.Log(randomNumber);
+        //Debug.Log(randomNumber);
     }
 
     IEnumerator generateShockwave() {

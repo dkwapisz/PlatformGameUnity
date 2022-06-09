@@ -19,11 +19,6 @@ public class Enemy : MonoBehaviour
     {
         died = false;
         player = GameObject.FindGameObjectWithTag("Player");
-        if (gameObject == GameObject.FindGameObjectWithTag("Boss1Sprite"))
-        {
-            boss1Sprite = GameObject.FindGameObjectWithTag("Boss1Sprite");
-            _animator = boss1Sprite.GetComponent<Animator>();
-        }
     }
 
     protected virtual void FixedUpdate()
@@ -56,7 +51,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void hurt(int damage = 1) {
+    public virtual void hurt(int damage = 1) {
         if (!damageCooldownActive) {
             healthPoints = healthPoints - damage;
             StartCoroutine(activateDamageCooldown());

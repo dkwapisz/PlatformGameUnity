@@ -29,6 +29,8 @@ TagManager:
   - ReverseGravityTool
   - Boss1Sprite
   - Boss2Sprite
+  - Boss3Sprite
+  - BulletSprite
   layers:
   - Default
   - TransparentFX
