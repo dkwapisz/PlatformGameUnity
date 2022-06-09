@@ -27,6 +27,9 @@ public class ThirdBossMovement : MonoBehaviour
     private GameObject boss3Sprite;
     private Animator animator;
     
+    [SerializeField] private AudioSource fireballSoundEffect;
+   // [SerializeField] private AudioSource explodeSoundEffect;
+    
     // private SpriteRenderer bulletSpriteRenderer;
     // private GameObject bulletSprite;
     // private Animator bulletAnimator;
@@ -123,6 +126,7 @@ public class ThirdBossMovement : MonoBehaviour
 
     public void beginAttack()
     {
+        StartCoroutine(fireBallSound());
         lastBombDroppedPostion = new Vector2(1000.0f, 1000.0f); // big values to be sure that first bomb will be dropped
         playerPositionWhenAttackStarted = player.transform.position;
         baseMovement = false;
@@ -154,5 +158,12 @@ public class ThirdBossMovement : MonoBehaviour
                 endAttak();
             }
         }
+    }
+    
+    IEnumerator fireBallSound()
+    {
+        yield return new WaitForSeconds(3f);
+        fireballSoundEffect.Play();
+        
     }
 }
