@@ -23,6 +23,13 @@ public class ThirdBossMovement : MonoBehaviour
     float destinationOffset = 0.1f;
     Vector2 lastBombDroppedPostion;
     float gapBetweenBombs;
+    private SpriteRenderer spriteRenderer;
+    private GameObject boss3Sprite;
+    private Animator animator;
+    
+    // private SpriteRenderer bulletSpriteRenderer;
+    // private GameObject bulletSprite;
+    // private Animator bulletAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +37,15 @@ public class ThirdBossMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody2D>();
         gapBetweenBombs = raidRange * 2 / raidDensity - destinationOffset / raidDensity;
+        boss3Sprite = GameObject.FindGameObjectWithTag("Boss3Sprite");
+        animator = boss3Sprite.GetComponent<Animator>();
+        spriteRenderer = boss3Sprite.GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = true;
+
+        // bulletSprite = GameObject.FindGameObjectWithTag("BulletSprite");
+        // bulletAnimator = bulletSprite.GetComponent<Animator>();
+        // bulletSpriteRenderer = bulletSprite.GetComponent<SpriteRenderer>();
+        
         // playerPosition = player.transform.position;
         // flightDirection.x = 0;
         // flightDirection.y = playerPosition.y - transform.position.y + offsetAbovePlayer;
@@ -73,6 +89,7 @@ public class ThirdBossMovement : MonoBehaviour
             {
                 flightToStartAttackPosition = false;
                 flightToEndAttackPosition = true;
+                spriteRenderer.flipX = true;
             }
             flightDirection.x = playerPositionWhenAttackStarted.x - transform.position.x + raidRange;
 
@@ -84,6 +101,8 @@ public class ThirdBossMovement : MonoBehaviour
             if (transform.position.x <= playerPositionWhenAttackStarted.x - raidRange + destinationOffset)
             {
                 endAttak();
+                spriteRenderer.flipX = false;
+                
             }
             flightDirection.x = playerPositionWhenAttackStarted.x - transform.position.x - raidRange;
         }
@@ -98,6 +117,7 @@ public class ThirdBossMovement : MonoBehaviour
         {
             GetComponent<ThirdBossController>().dropBomb();
             lastBombDroppedPostion = transform.position;
+            animator.SetTrigger("Attack");
         }
     }
 

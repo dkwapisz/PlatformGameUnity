@@ -14,7 +14,6 @@ public class FirstBossMovement : MonoBehaviour
     Rigidbody2D rigidbody;
     
     private GameObject boss1Sprite;
-    private Animator animator;
     private SpriteRenderer spriteRenderer;
     private GameObject boss2Sprite;
     
@@ -32,10 +31,8 @@ public class FirstBossMovement : MonoBehaviour
         boss1Sprite = GameObject.FindGameObjectWithTag("Boss1Sprite");
         boss2Sprite = GameObject.FindGameObjectWithTag("Boss2Sprite");
         if (boss1Sprite != null) {
-            animator = boss1Sprite.GetComponent<Animator>();
             spriteRenderer = boss1Sprite.GetComponent<SpriteRenderer>();
         } else if (boss2Sprite != null) {
-            animator = boss2Sprite.GetComponent<Animator>();
             spriteRenderer = boss2Sprite.GetComponent<SpriteRenderer>();
         }
         
