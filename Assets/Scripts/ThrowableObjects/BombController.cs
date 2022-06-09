@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class BombController : MonoBehaviour
 {
-    [SerializeField] float explosionDelay = 0.2f;
+    [SerializeField] float explosionDelay = 1.8f;
     [SerializeField] float explosionRange = 2.0f;
     [SerializeField] int damage = 1;
     GameObject player;
+    
+    [SerializeField] private AudioSource explodeSoundEffect;
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(explodeSound());
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,7 +24,7 @@ public class BombController : MonoBehaviour
         {
             StartCoroutine(startDetonation());
         }
-    }
+    } 
 
     IEnumerator startDetonation() {
         yield return new WaitForSeconds(explosionDelay);
@@ -30,6 +33,11 @@ public class BombController : MonoBehaviour
 
         // yield return new WaitForSeconds(explosionAnimationDuration);
         Destroy(gameObject);
+    }
+    
+    IEnumerator explodeSound() {
+        yield return new WaitForSeconds(0.4f);
+        explodeSoundEffect.Play();
     }
 
     void explode() {

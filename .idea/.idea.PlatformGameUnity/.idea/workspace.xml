@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Basic dragon wings flutter sound">
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Dragon - fireball charge/drop sound">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ThirdBoss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ThirdBoss.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Throwable/ThrowableBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Throwable/ThrowableBomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/ThirdBossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/ThirdBossMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThrowableObjects/BombController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThrowableObjects/BombController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +85,7 @@
       <workItem from="1654619227028" duration="840000" />
       <workItem from="1654694872021" duration="644000" />
       <workItem from="1654759868634" duration="7008000" />
-      <workItem from="1654795673803" duration="3607000" />
+      <workItem from="1654795673803" duration="4808000" />
     </task>
     <task id="LOCAL-00001" summary="Basketball prefab added - good behaviour, Player detects contact">
       <created>1651753349944</created>
@@ -155,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654805742728</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Dragon - fireball charge/drop sound">
+      <created>1654807301895</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654807301895</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +197,7 @@
     <MESSAGE value="Więcej dźwięków (w tym menu)" />
     <MESSAGE value="Dzwieki goomba, boss1, boss2 + przezroczyste calki" />
     <MESSAGE value="Basic dragon wings flutter sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic dragon wings flutter sound" />
+    <MESSAGE value="Dragon - fireball charge/drop sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dragon - fireball charge/drop sound" />
   </component>
 </project>

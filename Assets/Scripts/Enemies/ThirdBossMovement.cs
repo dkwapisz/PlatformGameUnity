@@ -28,7 +28,7 @@ public class ThirdBossMovement : MonoBehaviour
     private Animator animator;
     
     [SerializeField] private AudioSource fireballSoundEffect;
-   // [SerializeField] private AudioSource explodeSoundEffect;
+
     
     // private SpriteRenderer bulletSpriteRenderer;
     // private GameObject bulletSprite;
