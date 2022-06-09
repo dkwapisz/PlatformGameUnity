@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Dzwieki goomba, boss1, boss2 + przezroczyste calki">
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-47.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-47.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ThirdBoss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/ThirdBoss.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameObjects/Trampoline.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameObjects/Trampoline.physicsMaterial2D" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scene/AudioBackgroundMusic.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scene/AudioBackgroundMusic.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="80-dzwieki-bossow-oraz-fixy" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -19,9 +25,6 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/User/RiderProjects/PlatformGameUnity/Assets/Prefabs/Scene/AudioBackgroundMusic.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -85,6 +88,7 @@
       <workItem from="1654619227028" duration="840000" />
       <workItem from="1654694872021" duration="644000" />
       <workItem from="1654759868634" duration="7008000" />
+      <workItem from="1654795673803" duration="2111000" />
     </task>
     <task id="LOCAL-00001" summary="Basketball prefab added - good behaviour, Player detects contact">
       <created>1651753349944</created>
