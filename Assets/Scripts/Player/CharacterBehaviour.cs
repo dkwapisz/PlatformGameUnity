@@ -106,7 +106,7 @@ public class CharacterBehaviour : MonoBehaviour {
         if (!damageCooldownActive)
         {
             health = health - damage;
-            Debug.Log("Player hurt: Current HP: " + health);
+            // Debug.Log("Player hurt: Current HP: " + health);
             StartCoroutine(activateDamageCooldown());
         }
 
@@ -119,7 +119,7 @@ public class CharacterBehaviour : MonoBehaviour {
             bullet.AddTorque(bulletTorque, ForceMode2D.Impulse);
             ammo--;
             StartCoroutine(activateThrowCooldown());
-            Debug.Log("Bullet thrown in direction: " + throwDirection.x);
+            // Debug.Log("Bullet thrown in direction: " + throwDirection.x);
         }
     }
 
@@ -130,18 +130,18 @@ public class CharacterBehaviour : MonoBehaviour {
     IEnumerator activateDamageCooldown()
     {
         damageCooldownActive = true;
-        Debug.Log("Damage cooldown activated");
+        // Debug.Log("Damage cooldown activated");
         yield return new WaitForSeconds(damageCooldownSeconds);
         damageCooldownActive = false;
-        Debug.Log("Damage cooldown deactivated");
+        // Debug.Log("Damage cooldown deactivated");
     }
 
     IEnumerator activateThrowCooldown()
     {
         throwCooldownActive = true;
-        Debug.Log("Throw cooldown activated");
+        // Debug.Log("Throw cooldown activated");
         yield return new WaitForSeconds(throwCooldownSeconds);
         throwCooldownActive = false;
-        Debug.Log("Trow cooldown deactivated");
+        // Debug.Log("Trow cooldown deactivated");
     }
 }
