@@ -23,13 +23,14 @@ public class ReloadScene : MonoBehaviour
         if (player.GetComponent<CharacterBehaviour>().health <= 0)
         {
             deadPlayerSoundEffect.Play();
+            player.GetComponent<CharacterController2D>().HandleDeath();
+            pauseGame();
             StartCoroutine(reloadScene());
         }
     }
 
     IEnumerator reloadScene()
     {
-        pauseGame();
         Debug.Log("YOU DIED. In " + reloadOffset + " the level will be reloaded");
         yield return new WaitForSecondsRealtime(reloadOffset);
         resumeGame();

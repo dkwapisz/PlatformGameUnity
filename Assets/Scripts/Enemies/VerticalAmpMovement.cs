@@ -55,11 +55,17 @@ public class VerticalAmpMovement : MonoBehaviour
     void turnBack() {
         
         if (targetPosition == righLimit) {
-            spriteRenderer.flipX = false;
+            if (goombaSprite != null)
+            {
+                spriteRenderer.flipX = false;
+            }
             targetPosition = leftLimit;
 
         } else {
-            spriteRenderer.flipX = true;
+            if (goombaSprite != null)
+            {
+                spriteRenderer.flipX = true;
+            }
             targetPosition = righLimit;
             
         }

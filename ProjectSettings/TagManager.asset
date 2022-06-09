@@ -27,6 +27,8 @@ TagManager:
   - MarksUI
   - BottlesUI
   - ReverseGravityTool
+  - Boss1Sprite
+  - Boss2Sprite
   layers:
   - Default
   - TransparentFX

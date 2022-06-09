@@ -3,8 +3,6 @@ using System.Collections;
 
 public class GoombaController : Enemy
 {
-
-    
     private Vector2 topDirection = Vector2.down;
     private Vector2 bottomDirection = Vector2.up;
     private Vector2 leftDirection = Vector2.right;
@@ -25,7 +23,7 @@ public class GoombaController : Enemy
     protected override void Start()
     {
         base.Start();
-        goombaSprite = GameObject.FindGameObjectWithTag("GoombaSprite");
+        goombaSprite = gameObject.transform.GetChild(0).gameObject;
         animator = goombaSprite.GetComponent<Animator>();
     }
 
@@ -78,7 +76,6 @@ public class GoombaController : Enemy
     void topCollision()
     {
         bouncePlayer();
-        animator.SetTrigger("Death");
         hurt();
     }
 
@@ -98,6 +95,7 @@ public class GoombaController : Enemy
         base.bouncePlayer();
         goombaDeadSoundEffect.Play();
         animator.SetTrigger("Death");
+        
     }
 
 }

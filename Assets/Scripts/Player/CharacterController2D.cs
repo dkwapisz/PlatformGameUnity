@@ -16,6 +16,7 @@ public class CharacterController2D : MonoBehaviour {
     private GameObject playerSprite;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private bool spriteIsOffsetted;
 
     private Vector2 standColliderSize;
     private Vector2 standColliderOffset;
@@ -52,6 +53,7 @@ public class CharacterController2D : MonoBehaviour {
         playerMaterial = new PhysicsMaterial2D();
         playerMaterial.friction = 0.4f;
         playerCollider2D.sharedMaterial = playerMaterial;
+        spriteIsOffsetted = false;
 
         standColliderSize = playerCollider2D.size;
         standColliderOffset = playerCollider2D.offset;
@@ -67,7 +69,7 @@ public class CharacterController2D : MonoBehaviour {
         HandleRunning();
         ChangeFrictionByVelocity();
         HandleFlipSprite();
-        HandleDeath();
+        //HandleDeath();
     }
 
     private void FixedUpdate() {
@@ -87,20 +89,22 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void HandleDeath() { //to expand
-        if (false) {
-            animator.SetTrigger("Dies");
-        }
-    }
-
     private void HandleFlipSprite() {
         if (rb2D.velocity.x < 0)
         {
             spriteRenderer.flipX = true;
+            if (!spriteIsOffsetted)  {
+                spriteRenderer.transform.position -= new Vector3( 1 , 0 , 0);
+                spriteIsOffsetted = true;
+            }
+
         }
-        else {
+        else if (rb2D.velocity.x > 0){
             spriteRenderer.flipX = false;
-            //spriteRenderer.transform.position -= Vector3(-1,0,0);
+            if (spriteIsOffsetted)  {
+                spriteRenderer.transform.position += new Vector3( 1 , 0 , 0);
+                spriteIsOffsetted = false;
+            }
         }
     }
     
@@ -204,6 +208,8 @@ public class CharacterController2D : MonoBehaviour {
         forwardDirection = factor;
         GetComponent<CharacterBehaviour>().playerTurnedBack();
         Debug.Log("Player turned back.");
+        
+        // Debug.Log("Player turned back.");
     }
 
     void ThrowBullet() {
@@ -297,5 +303,9 @@ public class CharacterController2D : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
             isJumping = false;
         }
+    }
+
+    public void HandleDeath() {
+        animator.SetTrigger("Dies");
     }
 }
