@@ -32,6 +32,8 @@ public class CharacterBehaviour : MonoBehaviour {
     [SerializeField] private AudioSource ectsCollectSoundEffect;
     [SerializeField] private AudioSource bottleCollectSoundEffect;
     [SerializeField] private AudioSource bottleThrowSoundEffect;
+    [SerializeField] private AudioSource hurtSoundEffect;
+    //[SerializeField] private AudioSource burnSoundEffect;
     
     
 
@@ -50,6 +52,7 @@ public class CharacterBehaviour : MonoBehaviour {
         bottlesAmount = bottlesUI.GetComponentInChildren<Text>();
         bottlesAmount.text = "0";
     }
+
 
     void FixedUpdate() {
             updateUI();
@@ -115,6 +118,7 @@ public class CharacterBehaviour : MonoBehaviour {
         if (!damageCooldownActive)
         {
             health = health - damage;
+            hurtSoundEffect.Play();
             Debug.Log("Player hurt: Current HP: " + health);
             StartCoroutine(activateDamageCooldown());
         }

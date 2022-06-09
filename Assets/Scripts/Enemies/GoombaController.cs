@@ -12,6 +12,15 @@ public class GoombaController : Enemy
     private float contactThreshold = 30;
     private GameObject goombaSprite;
     private Animator animator;
+    
+    [SerializeField] private AudioSource goombaCasualSoundEffect;
+    [SerializeField] private AudioSource goombaDeadSoundEffect;
+    protected override void Update()
+    {
+        base.Update();
+        goombaCasualSoundEffect.Play();
+       
+    }
 
     protected override void Start()
     {
@@ -87,6 +96,7 @@ public class GoombaController : Enemy
     protected override void bouncePlayer()
     {
         base.bouncePlayer();
+        goombaDeadSoundEffect.Play();
         animator.SetTrigger("Death");
     }
 
