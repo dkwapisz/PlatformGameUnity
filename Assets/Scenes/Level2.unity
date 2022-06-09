@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64171827, g: 0.86604613, b: 0.88084984, a: 1}
+  m_IndirectSpecularColor: {r: 0.6417251, g: 0.8660463, b: 0.8808482, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8912,6 +8912,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 113.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -54.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
 --- !u!4 &1344462279 stripped
@@ -12132,6 +12140,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7246287940128152151, guid: 0b2cbf9202b139945b94d8d1eee6921e, type: 3}
   m_PrefabInstance: {fileID: 139237214}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1960225598 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1802124390090085593, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+  m_PrefabInstance: {fileID: 4435432087819389946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1969907713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13101,6 +13114,26 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b6552c3aebf2795439614ec6931df748, type: 2}
+    - target: {fileID: 1802124390090085593, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802124390090085593, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_Volume
+      value: 0.635
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802124390090085593, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802124390090085593, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
+    - target: {fileID: 1802124390090085593, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2608710456280403549, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.002
@@ -13113,6 +13146,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss2Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 4028030913424814402, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_Pitch
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028030913424814402, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028030913424814402, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435432086204607273, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
+      propertyPath: secondBossCasualSoundEffect
+      value: 
+      objectReference: {fileID: 1960225598}
     - target: {fileID: 4435432086204607274, guid: 9f762f895b705f0418e86585e3b3618c, type: 3}
       propertyPath: m_RootOrder
       value: 8

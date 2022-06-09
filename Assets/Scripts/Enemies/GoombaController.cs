@@ -16,13 +16,13 @@ public class GoombaController : Enemy
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        goombaCasualSoundEffect.Play();
-       
+        isDeadSoundFunction();
     }
 
     protected override void Start()
     {
         base.Start();
+        goombaCasualSoundEffect.Play();
         goombaSprite = gameObject.transform.GetChild(0).gameObject;
         animator = goombaSprite.GetComponent<Animator>();
     }
@@ -30,6 +30,7 @@ public class GoombaController : Enemy
     protected override void collisionWithPlayer(Collision2D collision)
     {
         checkCollisionDirection(collision.contacts);
+        isDeadSoundFunction();
     }
 
     void checkCollisionDirection(ContactPoint2D[] allCollisionPoints)
@@ -96,6 +97,12 @@ public class GoombaController : Enemy
         goombaDeadSoundEffect.Play();
         animator.SetTrigger("Death");
         
+    }
+    
+    void isDeadSoundFunction() {
+        if (healthPoints <= 0) {
+            goombaDeadSoundEffect.Play();
+        }
     }
 
 }

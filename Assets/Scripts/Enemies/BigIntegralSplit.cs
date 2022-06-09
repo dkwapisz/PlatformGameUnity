@@ -27,8 +27,8 @@ public class BigIntegralSplit : MonoBehaviour
 
     public void OnSpawnPrefab()
     {
-        float x = Random.Range(-15, 15);
-        float y = Random.Range(-2, 2);
+        float x = Random.Range(0, 15);
+        float y = Random.Range(2, 4);
         Instantiate(prefab, spawnPosition + new Vector2(x,y), Quaternion.identity);
     }
 }

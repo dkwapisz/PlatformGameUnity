@@ -11,12 +11,14 @@ public class FirstBossController : Enemy
     private Animator animator;
     private Vector2 topDirection = Vector2.down;
     private float contactThreshold = 30;
+    
+    [SerializeField] private AudioSource firstBossCasualSoundEffect;
 
     protected override void Start()
     {
         base.Start();
         childrenHealthPoints = healthPoints/2;
-        
+        firstBossCasualSoundEffect.Play();
         boss1Sprite = gameObject.transform.GetChild(0).gameObject;
         animator = boss1Sprite.GetComponent<Animator>();
     }
