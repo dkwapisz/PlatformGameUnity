@@ -23,10 +23,11 @@ public class CharacterController2D : MonoBehaviour {
     private Vector2 crouchColliderSize;
     private Vector2 crouchColliderOffset;
 
-    private bool isJumping;
-    private bool alreadyJumping;
+    // private bool isJumping;
+    // private bool alreadyJumping;
     private bool isCrouching;
     private bool isRunning;
+    private bool isGrounded = true;
   
     private bool throwBullet;
     public int forwardDirection;
@@ -70,14 +71,14 @@ public class CharacterController2D : MonoBehaviour {
         ChangeFrictionByVelocity();
         HandleFlipSprite();
         //HandleDeath();
+        HandleThrow();
     }
 
     private void FixedUpdate() {
         MoveHorizontal();
-        Jump();
+        // Jump();
         Crouch();
         StandUp();
-        HandleThrow();
     }
 
     private void HandleRunning() {
@@ -130,9 +131,12 @@ public class CharacterController2D : MonoBehaviour {
 
     private void HandleJumping() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            if (!isJumping) {
-                isJumping = true;
-                alreadyJumping = false;
+            // if (!isJumping) {
+            //     isJumping = true;
+            //     alreadyJumping = false;
+            // }
+            if (isGrounded) {
+                Jump();
             }
         }
     }
@@ -177,12 +181,13 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     private void Jump() {
-        if (isJumping && !alreadyJumping) {
+        // if (isJumping && !alreadyJumping) {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
-            alreadyJumping = true;
+            isGrounded = false;
+            // alreadyJumping = true;
             jumpSoundEffect.Play();
             animator.SetTrigger("Jump");
-        }
+        // }
     }
 
     private void Crouch() {
@@ -300,9 +305,12 @@ public class CharacterController2D : MonoBehaviour {
     
     
     private void OnCollisionEnter2D(Collision2D collision) {
-        if ((collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Spikes")) 
-            && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
-            isJumping = false;
+        // if ((collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Spikes")) 
+        //     && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
+        //     isJumping = false;
+        // }
+        if (collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Spikes")) {
+            isGrounded = true;
         }
     }
 
