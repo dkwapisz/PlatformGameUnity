@@ -14,10 +14,16 @@ public class ThirdBossController : Enemy
     bool raidCooldownActive = false;
     bool dropBombCooldownActive = false;
     public bool raidUnderway = false;
+    
+    private GameObject boss3Sprite;
+    private Animator animator;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        boss3Sprite = GameObject.FindGameObjectWithTag("Boss3Sprite");
+        animator = boss3Sprite.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +37,11 @@ public class ThirdBossController : Enemy
             // GetComponent<ThirdBossMovement>().stopMove = true;
             attack();
         }
+    }
+
+    public override void hurt(int damage = 1) {
+        base.hurt();
+        animator.SetTrigger("Hit");
     }
 
     bool isPlayerInAttackRange()
@@ -106,6 +117,7 @@ public class ThirdBossController : Enemy
     {
         // bouncePlayer();
         hurt();
+        animator.SetTrigger("Hit");
     }
 
     public IEnumerator activateAttackCooldown()

@@ -11,23 +11,34 @@ public class Enemy : MonoBehaviour
     private bool damageCooldownActive = false;
     private Animator _animator;
     private GameObject boss1Sprite;
+    
+    //[SerializeField] private AudioSource enemyDeathSoundEffect;
+    //[SerializeField] private AudioSource enemyCasualSoundEffect;
     // Start is called before the first frame update
     protected virtual void Start()
     {
         died = false;
         player = GameObject.FindGameObjectWithTag("Player");
-        if (gameObject == GameObject.FindGameObjectWithTag("Boss1Sprite"))
-        {
-            boss1Sprite = GameObject.FindGameObjectWithTag("Boss1Sprite");
-            _animator = boss1Sprite.GetComponent<Animator>();
-        }
     }
 
     protected virtual void FixedUpdate()
     {
-       if (died) {
-        destroyObject();
+        //enemyCasualSoundEffect.Play();
+        ///do testowania dzwieku POCZATEK
+        if (Input.GetKey(KeyCode.P))
+        {
+            died = true;
+        }
+        ///do testowania KONIEC
+       if (died) { 
+           //DeathSoundEffect.Play();
+           StartCoroutine(destroyEnemyObject());
        }
+    }
+    
+    IEnumerator destroyEnemyObject() {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,7 +51,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void hurt(int damage = 1) {
+    public virtual void hurt(int damage = 1) {
         if (!damageCooldownActive) {
             healthPoints = healthPoints - damage;
             StartCoroutine(activateDamageCooldown());

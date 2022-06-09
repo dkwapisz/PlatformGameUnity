@@ -11,18 +11,39 @@ public class FirstBossController : Enemy
     private Animator animator;
     private Vector2 topDirection = Vector2.down;
     private float contactThreshold = 30;
+    
+    [SerializeField] private AudioSource firstBossCasualSoundEffect;
+    [SerializeField] private float attackDelaySeconds = 1.0f;
 
     protected override void Start()
     {
         base.Start();
         childrenHealthPoints = healthPoints/2;
-        
+        firstBossCasualSoundEffect.Play();
         boss1Sprite = gameObject.transform.GetChild(0).gameObject;
         animator = boss1Sprite.GetComponent<Animator>();
     }
     
     protected override void collisionWithPlayer(Collision2D collision) {
         checkCollisionDirection(collision.contacts);
+    }
+
+    public override void hurt(int damage = 1) {
+        base.hurt();
+        animator.SetTrigger("Hit");
+    }
+    
+    protected override void hurtPlayer(int damage = 1) {
+        base.hurtPlayer();
+        
+        int randomNumber = Random.Range(1, 6);
+        if (randomNumber is 1 or 2) {
+            animator.SetTrigger("Attack");
+        } else if (randomNumber is 3 or 4) {
+            animator.SetTrigger("Attack 2");
+        } else if (randomNumber is 5 or 6) {
+            animator.SetTrigger("Attack 3");
+        }
     }
 
     void checkCollisionDirection(ContactPoint2D[] allCollisionPoints)

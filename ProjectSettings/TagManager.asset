@@ -32,6 +32,8 @@ TagManager:
   - BossDoor
   - ExitDoor
   - Boss
+  - Boss3Sprite
+  - BulletSprite
   layers:
   - Default
   - TransparentFX
