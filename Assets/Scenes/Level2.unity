@@ -7223,6 +7223,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
   m_PrefabInstance: {fileID: 1340306519}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1077419730 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8614567173942174817, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+  m_PrefabInstance: {fileID: 1340306519}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1078023573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8852,6 +8857,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 96722885394974876, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: jumpTrampolineSoundEffect
+      value: 
+      objectReference: {fileID: 1077419730}
     - target: {fileID: 2027229377958960800, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8914,11 +8923,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 113.3
+      value: 96.9
       objectReference: {fileID: 0}
     - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -54.2
+      value: -53.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614567173942174817, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_Pitch
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614567173942174817, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_Volume
+      value: 0.553
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
