@@ -1,197 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="BasketballSounds added - volume differs depending on radius from Player">
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-06.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-07.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-07.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-09.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-09.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-10.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-11.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-12.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-13.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-14.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-16.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-17.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-19.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-20.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-21.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-21.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-22.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-22.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-23.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-23.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-24.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-24.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-26.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-26.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-27.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-27.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-30.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-30.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-31.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-31.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-33.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-33.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-34.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-34.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-35.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-35.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-36.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-36.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-37.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-37.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-38.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-38.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-40.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-40.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-41.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-41.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-42.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-42.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-43.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-43.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-44.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-44.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-47.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-47.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-48.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-48.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-49.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-49.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-50.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-50.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/license.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/license.pdf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s1.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s2.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s9.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s9.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_beer_collect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_beer_collect.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_bottleThrow.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_bottleThrow.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_collect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_collect.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_collectECTS.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_collectECTS.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_dead.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_dead.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_gravityChange.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_gravityChange.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_jump.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_jump.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_monster.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_monster.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_victory.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/sound_victory.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Land_04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Land_04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Land_05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Land_05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Land_06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Land_06.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Start_04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Start_04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Start_05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Start_05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Start_06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Jump/Footsteps_Rock_Jump_Start_06.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_06.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_09.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_09.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_06.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_09.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Footsteps - Essentials/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_09.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Clack_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Clack_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 01_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 01_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 02_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 02_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 03_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 03_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 04_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 04_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Coarse Click_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Coarse Click_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Funny Click_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Funny Click_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Ping_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Ping_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Spacey Click_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Spacey Click_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Tiny Click_Minimal UI Sounds.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Tiny Click_Minimal UI Sounds.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button 2.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button 2.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button 3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button 3.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button 4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button 4.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Menu Clicks/Button.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music/Battle Music.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music/Battle Music.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music/Universe Music.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music/Universe Music.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/background_music_cisco_remix.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/background_music_cisco_remix.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/basketball_bounce_one.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/basketball_bounce_one.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/crack.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AudioFiles/crack.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/BasketballSounds.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/BasketballSounds.cs.meta" afterDir="false" />
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameObjects/Basketball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameObjects/Basketball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-20.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-20.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-26.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/DM-CGS-26.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Clack_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Clack_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 01_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 01_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 02_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 02_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 03_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 03_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 04_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Click 04_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Coarse Click_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Coarse Click_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Funny Click_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Funny Click_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Spacey Click_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Spacey Click_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Tiny Click_Minimal UI Sounds.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Minimal UI Sounds/Tiny Click_Minimal UI Sounds.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music/Battle Music.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AudioFiles/Universe Sounds Free Pack/Music/Battle Music.mp3.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Main Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuFunctionalities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuFunctionalities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/FootballBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/FootballBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -264,7 +109,10 @@
       <workItem from="1653732061703" duration="6613000" />
       <workItem from="1653917377644" duration="2735000" />
       <workItem from="1654168085424" duration="11961000" />
-      <workItem from="1654596935676" duration="2401000" />
+      <workItem from="1654596935676" duration="3025000" />
+      <workItem from="1654619227028" duration="840000" />
+      <workItem from="1654694872021" duration="644000" />
+      <workItem from="1654759868634" duration="4311000" />
     </task>
     <task id="LOCAL-00001" summary="Basketball prefab added - good behaviour, Player detects contact">
       <created>1651753349944</created>
@@ -308,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654518616376</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="BasketballSounds added - volume differs depending on radius from Player">
+      <created>1654608502339</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654608502339</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

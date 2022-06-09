@@ -7,6 +7,10 @@ public class FootballBehaviour : MonoBehaviour
 {
     
     [SerializeField] GameObject footBallGate;
+    [SerializeField] private AudioSource goalSoundEffect;
+    public bool wasGoalSoundPlayed = false;
+    
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("FootballGate"))
@@ -14,6 +18,12 @@ public class FootballBehaviour : MonoBehaviour
             if (col is BoxCollider2D)
             {
                  Debug.Log("GOAL");
+                 if (wasGoalSoundPlayed == false)
+                 {
+                     goalSoundEffect.Play();
+                     wasGoalSoundPlayed = true;
+                 }
+
                  footBallGate.GetComponent<CapsuleCollider2D>().enabled = true; //prevents ball from escaping footballgate
             }
         }

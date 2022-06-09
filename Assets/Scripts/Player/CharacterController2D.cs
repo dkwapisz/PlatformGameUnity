@@ -33,6 +33,7 @@ public class CharacterController2D : MonoBehaviour {
     ReverseGravity reverseGravity;
 
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource walkSoundEffect;
 
     void Awake()
     {
@@ -290,6 +291,7 @@ public class CharacterController2D : MonoBehaviour {
                hitUpLeftLeft || 
                hitUpRightRight;
     }
+    
     
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
