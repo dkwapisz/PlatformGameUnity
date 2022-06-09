@@ -22,6 +22,8 @@ public class FootballBehaviour : MonoBehaviour
                  {
                      goalSoundEffect.Play();
                      wasGoalSoundPlayed = true;
+                     var door = GameObject.FindGameObjectWithTag("BossDoor");
+                     Destroy(door);
                  }
 
                  footBallGate.GetComponent<CapsuleCollider2D>().enabled = true; //prevents ball from escaping footballgate

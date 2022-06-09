@@ -283,24 +283,25 @@ public class CharacterController2D : MonoBehaviour {
         
        
         
-        if (reverseGravity.isGravityNormal)
-        {
+        if (reverseGravity.isGravityNormal) {
              return hitDown.collider || 
-                    hitDownLeft || 
-                    hitDownRight || 
-                    hitDownLeftLeft || 
-                    hitDownRightRight;
+                    hitDownLeft.collider || 
+                    hitDownRight.collider || 
+                    hitDownLeftLeft.collider || 
+                    hitDownRightRight.collider;
+        } else {
+            return hitUp.collider || 
+                   hitUpLeft.collider || 
+                   hitUpRight.collider || 
+                   hitUpLeftLeft.collider || 
+                   hitUpRightRight.collider;
         }
-        return hitUp.collider || 
-               hitUpLeft || 
-               hitUpRight || 
-               hitUpLeftLeft || 
-               hitUpRightRight;
     }
     
     
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
+        if ((collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Spikes")) 
+            && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
             isJumping = false;
         }
     }

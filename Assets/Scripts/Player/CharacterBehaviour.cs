@@ -13,6 +13,7 @@ public class CharacterBehaviour : MonoBehaviour {
     public int health = 5;
     public int maxHealth = 5;
     public int marks = 0;
+    public int allMarksOnScene = 0;
     public int ammo = 0;
     public float throwCooldown = 1.0f;
     public float throwForce = 12.0f;
@@ -39,6 +40,9 @@ public class CharacterBehaviour : MonoBehaviour {
 
     private void Start() {
         rb2D = GetComponent<Rigidbody2D>();
+
+        var allMarks = GameObject.FindGameObjectsWithTag("Mark");
+        allMarksOnScene = allMarks.Length;
         
         healthBar = GameObject.FindGameObjectWithTag("HealthBar");
         healthSlider = healthBar.GetComponent<Slider>();
@@ -46,7 +50,7 @@ public class CharacterBehaviour : MonoBehaviour {
         
         marksUI = GameObject.FindGameObjectWithTag("MarksUI");
         marksAmount = marksUI.GetComponentInChildren<Text>();
-        marksAmount.text = "0";
+        marksAmount.text = "0/" + allMarksOnScene;
         
         bottlesUI = GameObject.FindGameObjectWithTag("BottlesUI");
         bottlesAmount = bottlesUI.GetComponentInChildren<Text>();
@@ -55,12 +59,12 @@ public class CharacterBehaviour : MonoBehaviour {
 
 
     void FixedUpdate() {
-            updateUI();
+        updateUI();
     }
 
     private void updateUI() {
         healthSlider.value = health / 5f;
-        marksAmount.text = marks.ToString();
+        marksAmount.text = marks + "/" + allMarksOnScene;
         bottlesAmount.text = ammo.ToString();
     }
     
