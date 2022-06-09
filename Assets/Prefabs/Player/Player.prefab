@@ -162,6 +162,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   marks: 0
+  allMarksOnScene: 0
   ammo: 0
   throwCooldown: 1
   throwForce: 12
@@ -1203,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc32bc44807c964abc280c1b34d2e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpTrampolineSoundEffect: {fileID: 0}
+  jumpTrampolineSoundEffect: {fileID: 8614567173942174817}
 --- !u!82 &8614567173942174817
 AudioSource:
   m_ObjectHideFlags: 0

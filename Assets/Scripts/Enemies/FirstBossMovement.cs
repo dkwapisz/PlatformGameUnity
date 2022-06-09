@@ -67,7 +67,7 @@ public class FirstBossMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag.Equals("Floor")) {
+        if (collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Trampoline")) {
             isGrounded = true;
             // Debug.Log("Grounded");
         }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour {
     
@@ -72,6 +73,7 @@ public class CharacterController2D : MonoBehaviour {
         HandleFlipSprite();
         //HandleDeath();
         HandleThrow();
+        HandleExit();
     }
 
     private void FixedUpdate() {
@@ -138,6 +140,12 @@ public class CharacterController2D : MonoBehaviour {
             if (isGrounded) {
                 Jump();
             }
+        }
+    }
+
+    private void HandleExit() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("Menu");
         }
     }
 
@@ -309,7 +317,8 @@ public class CharacterController2D : MonoBehaviour {
         //     && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
         //     isJumping = false;
         // }
-        if (collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Spikes")) {
+        if ((collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Spikes")) &&
+                rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {
             isGrounded = true;
         }
     }
