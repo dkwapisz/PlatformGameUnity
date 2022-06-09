@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 98e4c837801de2949a22458041b29703
+=======
+<<<<<<< HEAD:Assets/AudioFiles/goombaCasualSound.mp3.meta
+guid: ce0611cfd653cfd45b4895f0cf2df66b
+=======
+guid: 98e4c837801de2949a22458041b29703
+>>>>>>> origin/64-muzyka-i-podstawowe-sfx:Assets/AudioFiles/hurtSoundBurnMinecraft.mp3.meta
+>>>>>>> origin/64-muzyka-i-podstawowe-sfx
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
