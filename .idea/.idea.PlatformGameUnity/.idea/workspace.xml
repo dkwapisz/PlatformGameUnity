@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Dragon - fireball charge/drop sound">
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Fireballs explosion perfect">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Throwable/ThrowableBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Throwable/ThrowableBomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/ThirdBossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/ThirdBossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThrowableObjects/BombController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThrowableObjects/BombController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +20,9 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/User/RiderProjects/PlatformGameUnity/Assets/Scripts/ThrowableObjects/BombController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -85,7 +86,7 @@
       <workItem from="1654619227028" duration="840000" />
       <workItem from="1654694872021" duration="644000" />
       <workItem from="1654759868634" duration="7008000" />
-      <workItem from="1654795673803" duration="4808000" />
+      <workItem from="1654795673803" duration="5263000" />
     </task>
     <task id="LOCAL-00001" summary="Basketball prefab added - good behaviour, Player detects contact">
       <created>1651753349944</created>
@@ -164,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654807301895</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fireballs explosion perfect">
+      <created>1654808506045</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654808506045</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +206,7 @@
     <MESSAGE value="Dzwieki goomba, boss1, boss2 + przezroczyste calki" />
     <MESSAGE value="Basic dragon wings flutter sound" />
     <MESSAGE value="Dragon - fireball charge/drop sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dragon - fireball charge/drop sound" />
+    <MESSAGE value="Fireballs explosion perfect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fireballs explosion perfect" />
   </component>
 </project>
