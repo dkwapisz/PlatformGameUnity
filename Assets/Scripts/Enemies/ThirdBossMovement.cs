@@ -6,9 +6,10 @@ public class ThirdBossMovement : MonoBehaviour
 {
     [SerializeField] float viewingDistance = 14.0f;
     [SerializeField] float speed = 1.0f;
-    [SerializeField] float offsetAbovePlayer = 4.0f;
-    [SerializeField] float raidOffsetAbovePlayer = 3.0f;
-    [SerializeField] float bombDropRange = 5.0f;
+    [SerializeField] float offsetAbovePlayer = 2.8f;
+    [SerializeField] float raidOffsetAbovePlayer = 4.2f;
+    [SerializeField] float raidRange = 5.0f;
+    [SerializeField] int raidDensity = 10;
     Rigidbody2D rigidbody;
     GameObject player;
     Vector2 playerPosition;
@@ -20,14 +21,18 @@ public class ThirdBossMovement : MonoBehaviour
     bool flightToStartAttackPosition = false;
     bool flightToEndAttackPosition = false;
     float destinationOffset = 0.1f;
+    Vector2 lastBombDroppedPostion;
+    float gapBetweenBombs;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody2D>();
-        playerPosition = player.transform.position;
-        flightDirection.x = 0;
-        flightDirection.y = playerPosition.y - transform.position.y + offsetAbovePlayer;
+        gapBetweenBombs = raidRange * 2 / raidDensity - destinationOffset / raidDensity;
+        // playerPosition = player.transform.position;
+        // flightDirection.x = 0;
+        // flightDirection.y = playerPosition.y - transform.position.y + offsetAbovePlayer;
     }
 
     // Update is called once per frame
@@ -35,16 +40,20 @@ public class ThirdBossMovement : MonoBehaviour
     {
         playerPosition = player.transform.position;
         distanceToPlayer = Vector2.Distance(playerPosition, transform.position);
-        if (distanceToPlayer <= viewingDistance && baseMovement)  {
+        if (distanceToPlayer <= viewingDistance && baseMovement)
+        {
             followPlayer();
 
-        } else if (attackUnderway) {
+        }
+        else if (attackUnderway)
+        {
             flyOverPlayer();
 
         }
     }
 
-    void followPlayer() {
+    void followPlayer()
+    {
         // Debug.Log("Following player");
         flightDirection.y = playerPosition.y - transform.position.y + offsetAbovePlayer;
         flightDirection.x = playerPosition.x - transform.position.x;
@@ -52,31 +61,49 @@ public class ThirdBossMovement : MonoBehaviour
 
     }
 
-    void flyOverPlayer() {
+    void flyOverPlayer()
+    {
 
         flightDirection.y = playerPositionWhenAttackStarted.y - transform.position.y + raidOffsetAbovePlayer;
 
-        if (flightToStartAttackPosition) {
+        if (flightToStartAttackPosition)
+        {
             // Debug.Log("Lot na start");
-            if (transform.position.x >= playerPositionWhenAttackStarted.x + bombDropRange - destinationOffset) {
+            if (transform.position.x >= playerPositionWhenAttackStarted.x + raidRange - destinationOffset)
+            {
                 flightToStartAttackPosition = false;
                 flightToEndAttackPosition = true;
             }
-            flightDirection.x = playerPositionWhenAttackStarted.x - transform.position.x + bombDropRange;
-        
-        } else if (flightToEndAttackPosition) {
+            flightDirection.x = playerPositionWhenAttackStarted.x - transform.position.x + raidRange;
+
+        }
+        else if (flightToEndAttackPosition)
+        {
+            dropBomb();
             // Debug.Log("Lot na koniec");
-            if (transform.position.x <= playerPositionWhenAttackStarted.x - bombDropRange + destinationOffset) {
+            if (transform.position.x <= playerPositionWhenAttackStarted.x - raidRange + destinationOffset)
+            {
                 endAttak();
             }
-            flightDirection.x = playerPositionWhenAttackStarted.x - transform.position.x - bombDropRange;
+            flightDirection.x = playerPositionWhenAttackStarted.x - transform.position.x - raidRange;
         }
 
         rigidbody.velocity = transform.TransformDirection(flightDirection * speed);
 
     }
 
-    public void beginAttack() {
+    void dropBomb()
+    {
+        if (Vector2.Distance(lastBombDroppedPostion, transform.position) >= gapBetweenBombs)
+        {
+            GetComponent<ThirdBossController>().dropBomb();
+            lastBombDroppedPostion = transform.position;
+        }
+    }
+
+    public void beginAttack()
+    {
+        lastBombDroppedPostion = new Vector2(1000.0f, 1000.0f); // big values to be sure that first bomb will be dropped
         playerPositionWhenAttackStarted = player.transform.position;
         baseMovement = false;
         attackUnderway = true;
@@ -84,7 +111,8 @@ public class ThirdBossMovement : MonoBehaviour
         flightToEndAttackPosition = false;
     }
 
-    void endAttak() {
+    void endAttak()
+    {
         Debug.Log("Koniec ataku");
         flightToEndAttackPosition = false;
         baseMovement = true;
@@ -92,12 +120,17 @@ public class ThirdBossMovement : MonoBehaviour
         GetComponent<ThirdBossController>().attackEnded();
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (attackUnderway) {
-            if (flightToStartAttackPosition) {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (attackUnderway)
+        {
+            if (flightToStartAttackPosition)
+            {
                 flightToStartAttackPosition = false;
                 flightToEndAttackPosition = true;
-            } else if (flightToEndAttackPosition) {
+            }
+            else if (flightToEndAttackPosition)
+            {
                 endAttak();
             }
         }

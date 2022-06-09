@@ -17,7 +17,7 @@ public class BombController : MonoBehaviour
     {
         GameObject collisionObject = collision.gameObject;
 
-        if (collisionObject.tag.Equals("Floor"))
+        if (!collisionObject.tag.Equals("Enemy"))
         {
             StartCoroutine(startDetonation());
         }
