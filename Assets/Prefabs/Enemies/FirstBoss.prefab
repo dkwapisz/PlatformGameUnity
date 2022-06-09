@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352eafbbb4c494340a07bdd04f905872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2
+  healthPoints: 16
   bounceForce: 8
   ownPrefab: {fileID: 5099849349954426499}
   isChild: 0

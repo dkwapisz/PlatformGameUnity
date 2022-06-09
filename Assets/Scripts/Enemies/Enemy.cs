@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
     {
         if (died) { 
            //DeathSoundEffect.Play();
-           StartCoroutine(destroyEnemyObject());
+        //    StartCoroutine(destroyEnemyObject());
+        destroyObject();
        }
     }
     
