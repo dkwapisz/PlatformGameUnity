@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstBossMovement : MonoBehaviour
 {
-    [SerializeField] Vector2 hopForce = new Vector2(1.0f, 1.0f);
+    [SerializeField] public  Vector2 hopForce = new Vector2(1.0f, 1.0f);
     [SerializeField] float hopCooldownSeconds = 1.0f;
     [SerializeField] float viewingDistance = 20.0f;
     Vector2 playerPosition;

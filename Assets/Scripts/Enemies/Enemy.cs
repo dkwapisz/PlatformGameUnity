@@ -1,12 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] protected int healthPoints = 1;
     [SerializeField] protected int bounceForce = 8;
+    private float damageCooldownSeconds = 1.0f;
     protected bool died;
     protected GameObject player;
-
+    private bool damageCooldownActive = false;
     private Animator _animator;
     private GameObject boss1Sprite;
     // Start is called before the first frame update
@@ -24,9 +26,7 @@ public class Enemy : MonoBehaviour
     protected virtual void FixedUpdate()
     {
        if (died) {
-           Destroy(gameObject.GetComponent<Animator>());
-           Destroy(gameObject.GetComponent<SpriteRenderer>());
-           Destroy(gameObject);
+        destroyObject();
        }
     }
 
@@ -36,28 +36,28 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             collisionWithPlayer(collision);
-            //Debug.Log("im in");
-            // if (gameObject == GameObject.FindGameObjectWithTag("Boss1Sprite")) {
-            //     int randomNumber = Random.Range(1, 6);
-            //     if (randomNumber is 1 or 2) {
-            //         _animator.SetTrigger("Attack");
-            //     } else if (randomNumber is 3 or 4) {
-            //         _animator.SetTrigger("Attack 2");
-            //     } else if (randomNumber is 5 or 6) {
-            //         _animator.SetTrigger("Attack 3");
-            //     }
-            //     Debug.Log(randomNumber);
-            // }
         
         }
     }
 
     public void hurt(int damage = 1) {
-        healthPoints = healthPoints - damage;
+        if (!damageCooldownActive) {
+            healthPoints = healthPoints - damage;
+            StartCoroutine(activateDamageCooldown());
+        }
         if (healthPoints <= 0) {
             died = true;
         }
         Debug.Log("Enemy hurt. HP: " + healthPoints);
+    }
+
+    IEnumerator activateDamageCooldown()
+    {
+        damageCooldownActive = true;
+        Debug.Log("Damage cooldown activated");
+        yield return new WaitForSeconds(damageCooldownSeconds);
+        damageCooldownActive = false;
+        Debug.Log("Damage cooldown deactivated");
     }
 
     protected virtual void collisionWithPlayer(Collision2D collision) {
