@@ -23,14 +23,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        //enemyCasualSoundEffect.Play();
-        ///do testowania dzwieku POCZATEK
-        if (Input.GetKey(KeyCode.P))
-        {
-            died = true;
-        }
-        ///do testowania KONIEC
-       if (died) { 
+        if (died) { 
            //DeathSoundEffect.Play();
            StartCoroutine(destroyEnemyObject());
        }

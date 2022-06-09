@@ -11665,6 +11665,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7232201739963288584, guid: 52543c9fa6baaab4d9ee482d7f70aefd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7232201739963288585, guid: 52543c9fa6baaab4d9ee482d7f70aefd, type: 3}
       propertyPath: m_Name
       value: AudioBackgroundMusic
