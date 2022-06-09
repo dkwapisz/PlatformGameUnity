@@ -81,7 +81,7 @@ public class GoombaController : Enemy
 
     void bottomCollision()
     {
-        bouncePlayer();
+        // bouncePlayer();
         hurt();
     }
 
