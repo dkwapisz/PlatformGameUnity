@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Więcej dźwięków (w tym menu)">
+    <list default="true" id="99f70e14-53c2-4b51-9a94-4dc1dcca7816" name="Changes" comment="Dzwieki goomba, boss1, boss2 + przezroczyste calki">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlatformGameUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Goomba.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Goomba.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameObjects/Basketball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameObjects/Basketball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioFiles/CasualGameSounds/s2.wav.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scene/Respawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scene/Respawn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoombaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoombaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/ReloadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/ReloadScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,9 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/User/RiderProjects/PlatformGameUnity/Assets/Prefabs/Scene/AudioBackgroundMusic.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654765049598</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Dzwieki goomba, boss1, boss2 + przezroczyste calki">
+      <created>1654793104178</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654793104178</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +180,7 @@
     <MESSAGE value="Dodano, podpięto i sprawdzono dźwięki: &#10;jump ✔&#10;                beer_collect ✔&#10;                ECTS_collect ✔&#10;                bottle_collect ✔&#10;                reverseGravity_collect ✔&#10;                bottle_throw ✔&#10;                bottle_crash ✔" />
     <MESSAGE value="BasketballSounds added - volume differs depending on radius from Player" />
     <MESSAGE value="Więcej dźwięków (w tym menu)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Więcej dźwięków (w tym menu)" />
+    <MESSAGE value="Dzwieki goomba, boss1, boss2 + przezroczyste calki" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dzwieki goomba, boss1, boss2 + przezroczyste calki" />
   </component>
 </project>

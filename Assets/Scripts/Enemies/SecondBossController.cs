@@ -15,12 +15,20 @@ public class SecondBossController : Enemy
     
     private GameObject boss2Sprite;
     private Animator animator;
+    
+    [SerializeField] private AudioSource secondBossCasualSoundEffect;//wywolane przez awake w menu unity (dzwiek 3D wiec spk)
+    [SerializeField] private AudioSource secondBossShockWaveSoundEffect;
 
     void Awake()
     {
         boss2Sprite = GameObject.FindGameObjectWithTag("Boss2Sprite");
         animator = boss2Sprite.GetComponent<Animator>();
     }
+    
+    // protected override void Start()
+    // {
+    //     secondBossCasualSoundEffect.Play();
+    // }
 
     // Update is called once per frame
     protected override void FixedUpdate()
@@ -29,6 +37,7 @@ public class SecondBossController : Enemy
         
         if (isPlayerInAttackRange() && !attackCooldown) {
             attack();
+            secondBossShockWaveSoundEffect.Play();
             StartCoroutine(playAttackAnimation());
         }
     }
@@ -44,7 +53,6 @@ public class SecondBossController : Enemy
 
         if (distanceToPlayer <= attackRange) {
             return true;
-    
         } else {
             return false;
         }
@@ -82,7 +90,6 @@ public class SecondBossController : Enemy
             bouncePlayer();
         }
         Debug.Log("SHOCKWAVE");
-
         yield return new WaitForSeconds(attackDelaySeconds/2);
         GetComponent<FirstBossMovement>().stopMoving = false;
         attackCooldown = false;
