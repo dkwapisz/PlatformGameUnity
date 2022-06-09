@@ -8,6 +8,9 @@ public class ReloadScene : MonoBehaviour
 {
     [SerializeField] float reloadOffset = 2;
     GameObject player;
+    
+    [SerializeField] private AudioSource deadPlayerSoundEffect;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,7 @@ public class ReloadScene : MonoBehaviour
     {   
         if (player.GetComponent<CharacterBehaviour>().health <= 0)
         {
+            deadPlayerSoundEffect.Play();
             player.GetComponent<CharacterController2D>().HandleDeath();
             pauseGame();
             StartCoroutine(reloadScene());

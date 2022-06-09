@@ -33,6 +33,9 @@ public class CharacterController2D : MonoBehaviour {
     
     ReverseGravity reverseGravity;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource walkSoundEffect;
+
     void Awake()
     {
         reverseGravity = GameObject.Find("Player").GetComponent<ReverseGravity>();
@@ -177,6 +180,7 @@ public class CharacterController2D : MonoBehaviour {
         if (isJumping && !alreadyJumping) {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
             alreadyJumping = true;
+            jumpSoundEffect.Play();
             animator.SetTrigger("Jump");
         }
     }
@@ -293,6 +297,7 @@ public class CharacterController2D : MonoBehaviour {
                hitUpLeftLeft || 
                hitUpRightRight;
     }
+    
     
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag.Equals("Floor") && rb2D.velocity.y == 0 && IsPlayerTouchingGround()) {

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuFunctionalities : MonoBehaviour
 {
+    [SerializeField] private AudioSource clickSoundEffect;
+    
     public void PlayLevel1() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }

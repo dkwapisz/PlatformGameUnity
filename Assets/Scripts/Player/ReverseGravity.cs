@@ -8,6 +8,8 @@ public class ReverseGravity : MonoBehaviour
    
     public bool isGravityNormal;
     
+    [SerializeField] private AudioSource reverseGravityCollectSoundEffect;
+    
 
     void Start()
     {
@@ -21,9 +23,20 @@ public class ReverseGravity : MonoBehaviour
             //variable = (condition) ? expressionTrue :  expressionFalse;
             isGravityNormal = (isGravityNormal) ?  false : true;
             Reverse();
+            reverseGravityCollectSoundEffect.Play();
             GameObject player = GameObject.Find("Player");
             CharacterController2D characterController2D = player.GetComponent<CharacterController2D>();
             characterController2D.jumpForce *= -1;
+            if (isGravityNormal)
+            {
+                rb2D.transform.localScale = new Vector3(1, 2, 1); 
+            }
+            else
+            {
+                 rb2D.transform.localScale = new Vector3(-1, 2, 1);
+            }
+
+           
             Debug.Log("Gravity Reversed");
             Destroy(collider.gameObject);
         }
@@ -32,7 +45,6 @@ public class ReverseGravity : MonoBehaviour
     private void Reverse()
     {
         rb2D.gravityScale *= -1;
-        rb2D.transform.localScale = new Vector3(-1, 2, 1);
         if (isGravityNormal == false){
             transform.eulerAngles = new Vector3(0, 0, 180f);
         }else
