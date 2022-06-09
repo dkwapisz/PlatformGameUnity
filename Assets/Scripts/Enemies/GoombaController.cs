@@ -13,9 +13,9 @@ public class GoombaController : Enemy
     
     [SerializeField] private AudioSource goombaCasualSoundEffect;
     [SerializeField] private AudioSource goombaDeadSoundEffect;
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         goombaCasualSoundEffect.Play();
        
     }

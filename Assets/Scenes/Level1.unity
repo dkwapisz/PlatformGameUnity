@@ -2581,6 +2581,18 @@ PrefabInstance:
       propertyPath: m_UpdateMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723086859540446748, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761379c56e65c834eac9c4c0a4a4d8dd, type: 3}
 --- !u!1001 &580658295
@@ -3369,13 +3381,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7232201739963288584, guid: 52543c9fa6baaab4d9ee482d7f70aefd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7232201739963288585, guid: 52543c9fa6baaab4d9ee482d7f70aefd, type: 3}
       propertyPath: m_Name
       value: AudioBackgroundMusic
       objectReference: {fileID: 0}
     - target: {fileID: 7232201739963288587, guid: 52543c9fa6baaab4d9ee482d7f70aefd, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7232201739963288587, guid: 52543c9fa6baaab4d9ee482d7f70aefd, type: 3}
       propertyPath: m_LocalPosition.x
