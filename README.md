@@ -19,6 +19,7 @@ The game includes such things as:
 - possibility to use bottles as ammunition
 - animated player and enemies sprites
 - collectable things such as marks and beers
+- various sound effects
 
 ## Technologies Used
 - Unity Engine (version 2021.2.7f1)
